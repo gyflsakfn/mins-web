@@ -1,0 +1,48 @@
+#banner {
+  margin-top: 4rem;
+  background-image: url(../../assets/images/banner_bg_light.png);
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container.banner__container {
+  display: grid;
+  grid-template-columns: 58% 30%;
+  gap: 12%;
+}
+.banner__info h1 {
+  margin-bottom: 20px;
+  display: block;
+}
+
+.banner__img img {
+  border-radius: 50%;
+  animation: updown 3s linear infinite;
+}
+@keyframes updown {
+  0% {
+    transform: translateY(-15px);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+  100% {
+    transform: translateY(-15px);
+  }
+}
+
+.txt-rotate > .wrap {
+  border-right: 0.08em solid #666;
+}
+
+/* MEDIA QUERIES (tablets) */
+@media screen and (max-width: 1024px) {
+}
+
+/* MEDIA QUERIES (phones) */
+@media screen and (max-width: 600px) {
+  .banner__img {
+    display: none;
+  }
+}
