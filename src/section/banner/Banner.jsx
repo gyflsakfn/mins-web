@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import bannerImg from '../../assets/images/banner_img.png'
+import Snowflake, { findId, makeSnowflake } from '../../component/snow';
 import './banner.css'
 
 const Banner = () => {
@@ -50,6 +51,7 @@ const Banner = () => {
 
   return (
     <section id='banner'>
+
       <div className="container banner__container">
         <div className="banner__info">
           <h1>{`Hi! I'm JeongMin`} <span className="txt-rotate"><span className="wrap">{text}</span></span></h1>
@@ -58,8 +60,11 @@ const Banner = () => {
         <div className="banner__img">
           <img src={bannerImg} alt="" />
         </div>
+        <div className="wave"></div>
       </div>
+      <Snowflake findId="#banner" />
     </section>
+
   )
 }
 
