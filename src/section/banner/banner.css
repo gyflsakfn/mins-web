@@ -53,6 +53,7 @@
 }
 .banner__img img {
   border-radius: 50%;
+  background-color: aliceblue;
   animation: updown 3s linear infinite;
 }
 
