@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import bannerImg from '../../assets/images/banner_img.png'
-import Snowflake, { findId, makeSnowflake } from '../../component/snow';
+import bannerAvatar from '../../assets/images/banner_img.png'
+import { BsFillArrowRightCircleFill } from 'react-icons/bs';
+// import Snowflake, { findId, makeSnowflake } from '../../component/snow';
 import './banner.css'
 
 const Banner = () => {
@@ -51,19 +52,18 @@ const Banner = () => {
 
   return (
     <section id='banner'>
-
       <div className="container banner__container">
         <div className="banner__info">
+          <span className="tagline">Welcome to my Portfolio</span>
           <h1>{`Hi! I'm JeongMin`} <span className="txt-rotate"><span className="wrap">{text}</span></span></h1>
           <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+          <button onClick={() => console.log('connect')}>Let’s Connect <BsFillArrowRightCircleFill size={25} /></button>
         </div>
         <div className="banner__img">
-          <img src={bannerImg} alt="" />
+          <img src={bannerAvatar} alt="" />
         </div>
-        <div className="wave"></div>
       </div>
-      <Snowflake findId="#banner" />
-    </section>
+    </section >
 
   )
 }
