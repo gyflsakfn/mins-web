@@ -1,5 +1,5 @@
 .card {
-  background-color: var(--color-white);
+  background-color: var(--color-light);
   padding: 1.5rem;
   border: 2px solid transparent;
   border-radius: var(--border-radius-1);
@@ -8,18 +8,18 @@
 
 .card:hover {
   background: transparent;
-  border-color: var(--color-white);
+  border-color: var(--color-primary);
   transform: translateY(-0.5rem);
 }
 
-.card.light {
+/* .card.light {
   background-color: var(--color-light);
 }
 
 .card.light:hover {
   background-color: transparent;
-  border-color: var(--color-light);
-}
+  border-color: var(--color-white);
+} */
 
 /* MEDIA QUERIES (phone) */
 @media screen and (max-width: 600px) {
