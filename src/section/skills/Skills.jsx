@@ -1,6 +1,6 @@
 import Card from '../../component/Card'
 import { RiReactjsLine } from "react-icons/ri";
-import { FaReact } from "react-icons/fa";
+
 import data from './data'
 
 import './skills.css'
@@ -12,7 +12,7 @@ const Skills = () => {
       <p>I give you the best in all the services below</p>
       <div className="container skills__container">
         <Card className='skills'>
-          <div className="skills__icon"><FaReact /></div>
+          <div className="skills__icon"><RiReactjsLine /></div>
           <div className="skills__details">
             <h4>Front-End</h4>
             <div className="skills__card">
@@ -25,7 +25,17 @@ const Skills = () => {
                 ))
               }
             </div>
+          </div>
+        </Card>
+        <Card className='skills'>
+          <div className="skills__icon"><RiReactjsLine /></div>
+          <div className="skills__details">
+            <h4>Back-End</h4>
+            <div className="skills__card">
+              {
 
+              }
+            </div>
           </div>
         </Card>
 
