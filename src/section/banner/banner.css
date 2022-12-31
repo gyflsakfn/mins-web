@@ -1,6 +1,7 @@
 #banner {
   margin-top: 4rem;
-  background-image: url(../../assets/images/banner_bg_light.png);
+  height: calc(100vh - 4rem);
+  background-image: url(../../assets/images/banner_bg_light1.png);
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -11,15 +12,51 @@
   grid-template-columns: 58% 30%;
   gap: 12%;
 }
+
+.banner__info .tagline {
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  padding: 8px 10px;
+  background: linear-gradient(
+    90.21deg,
+    rgba(170, 54, 124, 0.5) -5.91%,
+    rgba(74, 47, 189, 0.5) 111.58%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  font-size: 1.4rem;
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
 .banner__info h1 {
   margin-bottom: 20px;
   display: block;
 }
-
+.banner__info button {
+  color: var(--color-black);
+  background: transparent;
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-top: 60px;
+  letter-spacing: 0.8px;
+  display: flex;
+  align-items: center;
+}
+.banner__info button svg {
+  font-size: 1.4rem;
+  margin-left: 10px;
+  transition: 0.3s ease-in-out;
+  line-height: 1;
+}
+.banner__info button:hover svg {
+  margin-left: 25px;
+}
 .banner__img img {
   border-radius: 50%;
+  background-color: aliceblue;
   animation: updown 3s linear infinite;
 }
+
 @keyframes updown {
   0% {
     transform: translateY(-15px);
@@ -38,10 +75,23 @@
 
 /* MEDIA QUERIES (tablets) */
 @media screen and (max-width: 1024px) {
+  .container.banner__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6%;
+  }
+  .banner__img {
+    width: 50%;
+  }
 }
 
 /* MEDIA QUERIES (phones) */
 @media screen and (max-width: 600px) {
+  /* .container.banner__container {
+    display: grid;
+    grid-template-columns: 1fr;
+  } */
   .banner__img {
     display: none;
   }
