@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { login, logout, onUserStateChange } from '../../api/firebase';
+import User from '../../component/User';
 import data from './data'
 import './navbar.css'
 
@@ -10,18 +11,18 @@ const Navbar = () => {
   const [user, setUser] = useState();
 
   useEffect(() => {
-    onUserStateChange((user) => {
+    onUserStateChange(user => {
       console.log(user)
-      setUser(user);
-    })
+      setUser(user)
+    });
   }, []);
 
   const handleLogin = () => {
-    login().then(setUser);
+    login();
   }
 
   const handleLogout = () => {
-    logout().then(setUser);
+    logout();
   }
 
 
@@ -39,6 +40,7 @@ const Navbar = () => {
           }
         </ul>
         {/* <button id='theme__icon' onClick={showModalHandler}><IoIosColorPalette /></button> */}
+        {user && <User user={user} />}
         {!user && <button onClick={handleLogin}>Login</button>}
         {user && <button onClick={handleLogout}>Logout</button>}
       </div>
