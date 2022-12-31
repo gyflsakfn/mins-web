@@ -4,12 +4,15 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import NotFound from "./component/NotFound";
+import Home from "./pages/Home";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    // errorElement: <NotFound />,
+    errorElement: <NotFound />,
+    children: [{ index: true, path: "/", element: <Home /> }],
   },
 ]);
 
