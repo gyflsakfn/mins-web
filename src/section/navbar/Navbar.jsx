@@ -1,21 +1,13 @@
 
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
-import { login, logout, onUserStateChange } from '../../api/firebase';
+import Button from '../../component/ui/Button';
 import User from '../../component/User';
+import { useAuthContext } from '../../context/AuthContext';
 import data from './data'
 import './navbar.css'
 
 const Navbar = () => {
-  const [user, setUser] = useState();
-
-  useEffect(() => {
-    onUserStateChange(user => {
-      console.log(user)
-      setUser(user)
-    });
-  }, []);
+  const { user, login, logout } = useAuthContext();
 
   const handleLogin = () => {
     login();
@@ -25,11 +17,10 @@ const Navbar = () => {
     logout();
   }
 
-
   return (
     <nav>
       <div className="container nav__container">
-        <HashLink to='#' className='nav__logo'>
+        <HashLink to='/#' className='nav__logo'>
           <h1>min.s</h1>
         </HashLink>
         <ul className='nav__menu'>
@@ -41,8 +32,8 @@ const Navbar = () => {
         </ul>
         {/* <button id='theme__icon' onClick={showModalHandler}><IoIosColorPalette /></button> */}
         {user && <User user={user} />}
-        {!user && <button onClick={handleLogin}>Login</button>}
-        {user && <button onClick={handleLogout}>Logout</button>}
+        {!user && <Button text={'Login'} onClick={handleLogin} />}
+        {user && <Button text={'Logout'} onClick={handleLogout} />}
       </div>
     </nav>
   )
