@@ -3,12 +3,19 @@ import { addNewProject } from '../api/firebase';
 import { uploadImage } from '../api/uploader';
 import Button from '../component/ui/Button';
 import './newportfolio.css'
+import { useMutation, useQueryClient } from '@tanstack/react-query'
 
 const NewPortfolio = () => {
   const [project, setProject] = useState({});
   const [file, setFile] = useState();
   const [isUploading, setIsUploading] = useState(false);
   const [success, setSuccess] = useState();
+
+  const queryClient = useQueryClient();
+  const addProject = useMutation(({ project, url }) => addNewProject(project, url),
+    {
+      onSuccess: () => queryClient.invalidateQueries('projects'),
+    });
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
@@ -24,14 +31,14 @@ const NewPortfolio = () => {
     setIsUploading(true);
     uploadImage(file) //
       .then(url => {
-        addNewProject(project, url)
-          .then(() => {
-            setSuccess('성공적으로 포토폴리오가 추가되었습니다.')
+        addProject.mutate({ project, url }, {
+          onSuccess: () => {
+            setSuccess('프로젝트가 성공적으로 추가되었습니다.')
             setTimeout(() => {
               setSuccess(null);
             }, 4000)
-          })
-        // Firebase에 새로우 제품 추가
+          }
+        })
       })
       .finally(() => setIsUploading(false))
   }

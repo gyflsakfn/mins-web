@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import CategoryButton from './CategoryButton'
 
-const ProjectsCategories = ({ categories, onFilterProjects }) => {
+const ProjectsCategories = ({ categories, setFilters }) => {
   const [activeCategory, setActiveCategory] = useState('all');
 
   const changeCategoryHandler = (activeCat) => {
     setActiveCategory(activeCat);
-    onFilterProjects(activeCat);
+    setFilters(activeCat);
   }
   return (
     <div className='portfolio__categories'>

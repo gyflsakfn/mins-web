@@ -1,6 +1,7 @@
 import React from 'react'
 import About from "../section/about/About";
 import Banner from "../section/banner/Banner";
+import Comment from '../section/comment/Comment';
 import Portfolio from "../section/portfolio/Portfolio";
 import Skills from "../section/skills/Skills";
 
@@ -12,6 +13,7 @@ const Home = () => {
       <About />
       <Skills />
       <Portfolio />
+      <Comment />
     </>
   )
 }
