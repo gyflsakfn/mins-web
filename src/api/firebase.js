@@ -1,3 +1,4 @@
+import { v4 as uuid } from "uuid";
 import { initializeApp } from "firebase/app";
 import {
   getAuth,
@@ -6,7 +7,7 @@ import {
   signOut,
   onAuthStateChanged,
 } from "firebase/auth";
-import { getDatabase, ref, get } from "firebase/database";
+import { getDatabase, ref, get, set } from "firebase/database";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -53,4 +54,21 @@ async function adminUser(user) {
       }
       return user;
     });
+}
+
+export async function addNewProject(project, imageUrl) {
+  const id = uuid();
+  return set(ref(database, `projects/${id}`), {
+    ...project,
+    id,
+    image: imageUrl,
+  });
+}
+
+export async function getProjects() {
+  return get(ref(database, "projects")).then((snapshot) => {
+    if (snapshot.exists()) {
+      return Object.values(snapshot.val());
+    }
+  });
 }

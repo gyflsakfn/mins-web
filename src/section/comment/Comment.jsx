@@ -1,9 +1,10 @@
-import './comment.css'
+import React from 'react';
 
-const comment = () => {
+export default function comment() {
   return (
-    <div>comment</div>
-  )
+    <section id='comment'>
+      Comment
+    </section>
+  );
 }
 
-export default comment
