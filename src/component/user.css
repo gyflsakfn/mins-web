@@ -1,0 +1,14 @@
+.user__box {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.user__box img {
+  width: 2.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.user__box span {
+}

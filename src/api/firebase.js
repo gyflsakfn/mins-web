@@ -58,7 +58,7 @@ async function adminUser(user) {
 
 export async function addNewPortfolio(portfolio, imageUrl) {
   const id = uuid();
-  set(ref(database, `portfolio/${id}`), {
+  return set(ref(database, `portfolio/${id}`), {
     ...portfolio,
     id,
     image: imageUrl,

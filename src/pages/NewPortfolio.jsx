@@ -2,10 +2,13 @@ import React, { useState } from 'react'
 import { addNewPortfolio } from '../api/firebase';
 import { uploadImage } from '../api/uploader';
 import Button from '../component/ui/Button';
+import './newportfolio.css'
 
 const NewPortfolio = () => {
   const [portfolio, setPortfolio] = useState({});
   const [file, setFile] = useState();
+  const [isUploading, setIsUploading] = useState(false);
+  const [success, setSuccess] = useState();
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
@@ -18,25 +21,40 @@ const NewPortfolio = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    uploadImage(file)
+    setIsUploading(true);
+    uploadImage(file) //
       .then(url => {
-        console.log(url);
         addNewPortfolio(portfolio, url)
+          .then(() => {
+            setSuccess('성공적으로 포토폴리오가 추가되었습니다.')
+            setTimeout(() => {
+              setSuccess(null);
+            }, 4000)
+          })
         // Firebase에 새로우 제품 추가
       })
+      .finally(() => setIsUploading(false))
   }
 
   return (
-    <section>
-      {file && <img src={URL.createObjectURL(file)} alt='local file' />}
-      <form onSubmit={handleSubmit}>
-        <input type="file" accept='image/#' name='file' required onChange={handleChange} />
-        <input type="text" name='title' value={portfolio.title ?? ''} placeholder='프로젝트명' required onChange={handleChange} />
-        <input type="text" name='category' value={portfolio.category ?? ''} placeholder='카테고리' required onChange={handleChange} />
-        <input type="text" name='demoUrl' value={portfolio.demoUrl ?? ''} placeholder='데모 사이트' required onChange={handleChange} />
-        <input type="text" name='gitUrl' value={portfolio.gitUrl ?? ''} placeholder='깃헙 주소' required onChange={handleChange} />
-        <Button text={'Submit'} />
-      </form>
+    <section className='container newPortfolio__container'>
+      <h3>새로운 포토폴리오 등록</h3>
+      {success && <p>✅ {success} </p>}
+      <div className="newPortfolio__wrapper">
+        <div className="thumenail__img">
+          {file && <img src={URL.createObjectURL(file)} alt='local file' />}
+        </div>
+        <form className='input__form' onSubmit={handleSubmit}>
+          <div>
+            <input type="file" accept='image/#' name='file' required onChange={handleChange} />
+            <input type="text" name='title' value={portfolio.title ?? ''} placeholder='프로젝트명' required onChange={handleChange} />
+            <input type="text" name='category' value={portfolio.category ?? ''} placeholder='카테고리' required onChange={handleChange} />
+            <input type="text" name='demoUrl' value={portfolio.demoUrl ?? ''} placeholder='데모 사이트' required onChange={handleChange} />
+            <input type="text" name='gitUrl' value={portfolio.gitUrl ?? ''} placeholder='깃헙 주소' required onChange={handleChange} />
+          </div>
+          <Button text={isUploading ? '업로드 중...' : '등록하기'} disabled={isUploading} />
+        </form>
+      </div>
     </section>
   )
 }
