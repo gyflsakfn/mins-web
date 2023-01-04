@@ -1,31 +1,20 @@
 import './portfolio.css'
-import User from '../../component/User';
-import { useAuthContext } from '../../context/AuthContext';
-import { BsFillPencilFill } from 'react-icons/bs'
-import { Link } from 'react-router-dom';
-import Button from '../../component/ui/Button';
+import ProjectsCategories from './ProjectsCategories';
+import Projects from './Projects';
 
 const Portfolio = () => {
-  const { user, login, logout } = useAuthContext();
 
-  const handleLogin = () => {
-    login();
-  }
-
-  const handleLogout = () => {
-    logout();
-  }
 
   return (
     <section id='portfolio'>
-      {user && <User user={user} />}
-      {!user && <Button text={'Login'} onClick={handleLogin} />}
-      {user && <Button text={'Logout'} onClick={handleLogout} />}
-      {user?.isAdmin && (
-        <Link to={'/newPortfolio'}>
-          <BsFillPencilFill />
-        </Link>
-      )}
+      <h2>Recent Projects</h2>
+      <p>
+        Check out some of the projects I recently worked on for my clients. Use the buttons to toggle the different categories.
+      </p>
+      <div className="container portfolio__container">
+        <ProjectsCategories />
+        <Projects />
+      </div>
     </section>
   )
 }
