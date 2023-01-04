@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { uploadImage } from '../api/uploader';
 import Button from '../component/ui/Button';
 
 const NewPortfolio = () => {
@@ -16,7 +17,11 @@ const NewPortfolio = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    uploadImage(file)
+      .then(url => {
+        console.log(url);
+        // Firebase에 새로우 제품 추가
+      })
   }
 
   return (
