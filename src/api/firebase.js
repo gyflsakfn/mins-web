@@ -56,11 +56,19 @@ async function adminUser(user) {
     });
 }
 
-export async function addNewPortfolio(portfolio, imageUrl) {
+export async function addNewProject(project, imageUrl) {
   const id = uuid();
-  return set(ref(database, `portfolio/${id}`), {
-    ...portfolio,
+  return set(ref(database, `projects/${id}`), {
+    ...project,
     id,
     image: imageUrl,
+  });
+}
+
+export async function getProjects() {
+  return get(ref(database, "projects")).then((snapshot) => {
+    if (snapshot.exists()) {
+      return Object.values(snapshot.val());
+    }
   });
 }
