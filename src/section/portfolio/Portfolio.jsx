@@ -16,6 +16,7 @@ const Portfolio = () => {
       <p>
         Check out some of the projects I recently worked on for my clients. Use the buttons to toggle the different categories.
       </p>
+      {/* TODO: 이 부분 스타일링 해야함!! */}
       {user?.isAdmin && (
         <Link to={'/newPortfolio'}>
           <BsFillPencilFill />

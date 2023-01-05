@@ -1,5 +1,6 @@
 import './about.css'
 import AboutProfile from '../../assets/images/aboutProfile.jpg'
+import Sang from '../../assets/images/sang.jpg'
 import Card from '../../component/Card'
 import cardData from './cardData'
 import contectData from './contectData'
@@ -10,7 +11,7 @@ const About = () => {
       <div className="container about__container">
         <div className="about__left">
           <div className="about__portrait">
-            <img src={AboutProfile} alt="about img" />
+            <img src={Sang} alt="about img" />
           </div>
         </div>
         <div className="about__right">

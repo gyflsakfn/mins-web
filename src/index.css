@@ -29,6 +29,7 @@
   --color-light: hsl(var(--primary-hue), 5%, var(--light-lightness));
   --color-black: hsl(var(--primary-hue), 5%, var(--black-lightness));
   --color-dark: hsl(var(--primary-hue), 5%, var(--dark-lightness));
+  --color-red: #fa5f55;
 
   /* GENERAL CONTAINER VARIABLES */
   --container-width-lg: 76%;
@@ -196,6 +197,11 @@ img {
 .btn.primary {
   background: var(--color-primary);
   /* 버튼의 text 색상은 흰색으로 고정 */
+  color: white;
+}
+
+.btn.red {
+  background-color: var(--color-red);
   color: white;
 }
 
