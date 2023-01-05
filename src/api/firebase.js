@@ -7,7 +7,7 @@ import {
   signOut,
   onAuthStateChanged,
 } from "firebase/auth";
-import { getDatabase, ref, get, set } from "firebase/database";
+import { getDatabase, ref, get, set, remove } from "firebase/database";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -71,4 +71,8 @@ export async function getProjects() {
       return Object.values(snapshot.val());
     }
   });
+}
+
+export async function removeProjects(id) {
+  return remove(ref(database, `projects/${id}`));
 }
