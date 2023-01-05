@@ -76,3 +76,12 @@ export async function getProjects() {
 export async function removeProjects(id) {
   return remove(ref(database, `projects/${id}`));
 }
+
+export async function addComment(comments, user) {
+  const { uid, displayName } = user;
+  return set(ref(database, `comments/${uid}`), {
+    id: uid,
+    displayName,
+    ...comments,
+  });
+}
