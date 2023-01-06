@@ -6,8 +6,9 @@ import {
   GoogleAuthProvider,
   signOut,
   onAuthStateChanged,
+  signInWithRedirect,
 } from "firebase/auth";
-import { getDatabase, ref, get, set, remove } from "firebase/database";
+import { getDatabase, ref, get, set, remove, onValue } from "firebase/database";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -28,7 +29,7 @@ const provider = new GoogleAuthProvider();
 const database = getDatabase(app);
 
 export function login() {
-  signInWithPopup(auth, provider).catch(console.error);
+  signInWithRedirect(auth, provider).catch(console.error);
 }
 
 export function logout() {
@@ -77,11 +78,20 @@ export async function removeProjects(id) {
   return remove(ref(database, `projects/${id}`));
 }
 
+/** 코멘트 추가 */
 export async function addComment(comments, user) {
   const { uid, displayName } = user;
   return set(ref(database, `comments/${uid}`), {
     id: uid,
     displayName,
     ...comments,
+  });
+}
+
+export async function getComments() {
+  return get(ref(database, "comments")).then((snapshot) => {
+    if (snapshot.exists()) {
+      return Object.values(snapshot.val());
+    }
   });
 }
