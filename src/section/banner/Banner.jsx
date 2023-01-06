@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import bannerAvatar from '../../assets/images/banner_img.png'
 import { BsFillArrowRightCircleFill } from 'react-icons/bs';
 // import Snowflake, { findId, makeSnowflake } from '../../component/snow';
@@ -16,17 +16,7 @@ const Banner = () => {
   // delta의 값을 초기화
   const period = 3000;
 
-  useEffect(() => {
-    let ticker = setInterval(() => {
-      // delta 시간에 한번씩 tick을 반복 실행
-      tick();
-      // console.log(delta)
-    }, delta)
-
-    return () => { clearInterval(ticker) };
-  }, [text])
-
-  const tick = () => {
+  const tick = useCallback(() => {
     let i = loopNum % toRotate.length;  // list의 길이가 3이면, loopNum이 1씩 증가할 때마다 i는 0,1,2 반복
     let fullText = toRotate[i]; // 출력할 Text를 받아옴.
     // iseDeleting true인 경우, text에서 한자씩 줄임. false인 경우 한자씩 text의 길이에 +1 시킴.
@@ -48,7 +38,17 @@ const Banner = () => {
       setLoopNum(loopNum + 1);
       setDelta(500);
     }
-  }
+  }, [isDeleting, loopNum, toRotate, text.length]);
+
+  useEffect(() => {
+    let ticker = setInterval(() => {
+      // delta 시간에 한번씩 tick을 반복 실행
+      tick();
+    }, delta)
+
+    return () => { clearInterval(ticker) };
+  }, [text, tick, delta])
+
 
   return (
     <section id='banner'>

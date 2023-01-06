@@ -6,7 +6,7 @@
 
 .card.skills {
   display: flex;
-  align-items: flex-start;
+  align-items: start;
   gap: 1rem;
 }
 
