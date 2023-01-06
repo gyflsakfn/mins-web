@@ -2,13 +2,12 @@ import { v4 as uuid } from "uuid";
 import { initializeApp } from "firebase/app";
 import {
   getAuth,
-  signInWithPopup,
   GoogleAuthProvider,
   signOut,
   onAuthStateChanged,
   signInWithRedirect,
 } from "firebase/auth";
-import { getDatabase, ref, get, set, remove, onValue } from "firebase/database";
+import { getDatabase, ref, get, set, remove } from "firebase/database";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
