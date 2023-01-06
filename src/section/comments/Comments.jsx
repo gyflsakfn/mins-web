@@ -1,8 +1,7 @@
 
-import React, { useState } from "react";
+import React from "react";
 
-import Button from '../../component/ui/Button';
-import User from '../../component/User';
+
 import { useAuthContext } from '../../context/AuthContext';
 
 import CommentForm from "./CommentForm";
@@ -10,7 +9,7 @@ import CommentList from "./CommentList";
 import './comments.css'
 
 const Comments = () => {
-  const { user, login, logout } = useAuthContext();
+  const { user } = useAuthContext();
 
   return (
     <section id='comments'>

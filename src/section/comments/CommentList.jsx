@@ -18,8 +18,8 @@ import CommetItem from './CommetItem';
 import { useAuthContext } from '../../context/AuthContext';
 
 const CommentList = () => {
-  const { isLoading, error, data: comments } = useQuery(['comments'], getComments)
-  const { user, login, logout } = useAuthContext();
+  const { data: comments } = useQuery(['comments'], getComments)
+  const { user, login } = useAuthContext();
 
   return (
     <>
