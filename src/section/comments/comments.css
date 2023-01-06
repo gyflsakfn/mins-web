@@ -1,0 +1,62 @@
+#testimonials {
+  padding-bottom: 0;
+}
+
+.card.comment__card {
+}
+.commentItem {
+  margin-top: 0.5rem;
+}
+.commentItem small {
+  word-wrap: break-word;
+}
+
+.swiper {
+  height: 25rem;
+  /* this paddint top is to give space for micro interaction on hover of swiper slide */
+  padding-top: 1rem;
+}
+
+.swiper-slide {
+  cursor: grab;
+}
+
+.swiper-pagination {
+  margin-bottom: 3rem;
+}
+
+.swiper-pagination-bullet {
+  background: var(--color-primary);
+}
+
+/* CommentForm */
+.commentForm {
+  display: flex;
+  justify-content: center;
+
+  gap: 2rem;
+}
+
+.commentForm .input__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.commentForm .input__wrapper input {
+  padding: 1rem 2rem;
+}
+
+.commentForm .btn__wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* MEDIA QUERIES (phones) */
+@media screen and (max-width: 600px) {
+  .commentForm {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+}

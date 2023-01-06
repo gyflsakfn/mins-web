@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { addComment } from '../../api/firebase';
+import Button from '../../component/ui/Button';
 
 
 const CommentForm = ({ user }) => {
@@ -16,10 +17,15 @@ const CommentForm = ({ user }) => {
   }
 
   return (
-    <div className="input__wrapper">
-      <input type="text" name="comment" placeholder="코멘트를 적으세요." onChange={handleChange} />
-      <input type="checkbox" name="isAnon" onChange={handleChange} />
-      <button onClick={handleClick}>제출제출</button>
+    <div className="commentForm">
+      <div className="input__wrapper">
+        <input type="text" name="comment" placeholder="코멘트를 적으세요." onChange={handleChange} />
+        <label htmlFor="checkAnon">익명</label>
+        <input id='checkAnon' type="checkbox" name="isAnon" onChange={handleChange} />
+      </div>
+      <div className="btn__wrapper">
+        <Button onClick={handleClick} text='제출하기'></Button>
+      </div>
     </div>
   )
 }
