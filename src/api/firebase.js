@@ -85,3 +85,11 @@ export async function addComment(comments, user) {
     ...comments,
   });
 }
+
+export async function getComments() {
+  return get(ref(database, "comments")).then((snapshot) => {
+    if (snapshot.exists()) {
+      return Object.values(snapshot.val());
+    }
+  });
+}
