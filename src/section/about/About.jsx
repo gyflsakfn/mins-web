@@ -1,5 +1,4 @@
 import './about.css'
-import AboutProfile from '../../assets/images/aboutProfile.jpg'
 import Sang from '../../assets/images/sang.jpg'
 import Card from '../../component/Card'
 import cardData from './cardData'
