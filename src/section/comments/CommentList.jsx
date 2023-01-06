@@ -15,33 +15,38 @@ import "swiper/css/autoplay"
 import { Pagination } from "swiper";
 import { getComments } from '../../api/firebase';
 import CommetItem from './CommetItem';
+import { useAuthContext } from '../../context/AuthContext';
 
 const CommentList = () => {
   const { isLoading, error, data: comments } = useQuery(['comments'], getComments)
+  const { user, login, logout } = useAuthContext();
 
   return (
-
-    <div className="container" >
-      <Swiper
-        slidesPerView={2}
-        spaceBetween={30}
-        breakpoints={{
-          601: { slidesPerView: 3 },
-          1025: { slidesPerView: 5 }
-        }}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Pagination, Autoplay]}
-        autoplay={true}
-        className="mySwiper"
-      >
+    <>
+      <div className={'container '} >
+        <Swiper className={'mySwiper' + (!user ? ' blur' : '')}
+          slidesPerView={2}
+          spaceBetween={30}
+          breakpoints={{
+            601: { slidesPerView: 3 },
+            1025: { slidesPerView: 5 }
+          }}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Pagination, Autoplay]}
+          autoplay={true}
+        >
+          {
+            comments &&
+            comments.map(comment => <SwiperSlide key={comment.id}><CommetItem item={comment} /></SwiperSlide>)
+          }
+        </Swiper>
         {
-          comments &&
-          comments.map(comment => <SwiperSlide key={comment.id}><CommetItem item={comment} /></SwiperSlide>)
+          !user && <button className='modal__btn' onClick={login}>로그인 버튼</button>
         }
-      </Swiper>
-    </div>
+      </div>
+    </>
   )
 }
 

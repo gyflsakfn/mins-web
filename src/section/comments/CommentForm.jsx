@@ -11,22 +11,23 @@ const CommentForm = ({ user }) => {
     setCommentInfo((prev) => ({ ...prev, [name]: value, isAnon: checked }))
   }
 
-  const handleClick = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     window.alert('완료')
     addComment(commentInfo, user)
   }
 
   return (
-    <div className="commentForm">
+    <form onSubmit={handleSubmit} className="commentForm">
       <div className="input__wrapper">
         <input type="text" name="comment" placeholder="코멘트를 적으세요." onChange={handleChange} />
         <label htmlFor="checkAnon">익명</label>
         <input id='checkAnon' type="checkbox" name="isAnon" onChange={handleChange} />
       </div>
       <div className="btn__wrapper">
-        <Button onClick={handleClick} text='제출하기'></Button>
+        <Button text='제출하기'></Button>
       </div>
-    </div>
+    </form>
   )
 }
 
