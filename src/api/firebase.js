@@ -3,7 +3,6 @@ import { initializeApp } from "firebase/app";
 import {
   getAuth,
   signInWithPopup,
-  signInWithRedirect,
   GoogleAuthProvider,
   signOut,
   onAuthStateChanged,
@@ -29,7 +28,7 @@ const provider = new GoogleAuthProvider();
 const database = getDatabase(app);
 
 export function login() {
-  signInWithRedirect(auth, provider).catch(console.error);
+  signInWithPopup(auth, provider).catch(console.error);
 }
 
 export function logout() {
