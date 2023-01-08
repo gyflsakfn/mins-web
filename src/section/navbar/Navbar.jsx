@@ -2,12 +2,15 @@
 import { HashLink } from 'react-router-hash-link';
 import Button from '../../component/ui/Button';
 import User from '../../component/User';
+import { IoSettingsOutline } from 'react-icons/io5'
 import { useAuthContext } from '../../context/AuthContext';
 import { links } from '../../util/data';
 import './navbar.css'
+import { useModalContext } from '../../context/ModalContext';
 
 const Navbar = () => {
   const { user, login, logout } = useAuthContext();
+  const { showModalHandler } = useModalContext();
 
   const handleLogin = () => {
     login();
@@ -34,6 +37,7 @@ const Navbar = () => {
         {user && <User user={user} />}
         {!user && <Button text={'Login'} onClick={handleLogin} />}
         {user && <Button text={'Logout'} onClick={handleLogout} />}
+        <button id='theme__icon' onClick={showModalHandler} ><IoSettingsOutline /></button>
       </div>
     </nav>
   )

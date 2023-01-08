@@ -22,9 +22,9 @@
   --dark-lightness: 44%;
   --light-lightness: 94%;
   --white-lightness: 100%;
-  /* HSL:색상, 채도, 명도의 앞글자 */
+  /* HSL: 색상, 채도, 명도의 앞글자 */
   /* Hue: 색상, Saturation: 채도, Lightness: 명도 */
-  --color-primary: hsl(var(--primary-hue), 89%, 41%);
+  --color-primary: hsl(var(--primary-hue), 90%, 41%);
   --color-white: hsl(0, 5%, var(--white-lightness));
   --color-light: hsl(var(--primary-hue), 5%, var(--light-lightness));
   --color-black: hsl(var(--primary-hue), 5%, var(--black-lightness));
