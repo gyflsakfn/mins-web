@@ -3,6 +3,10 @@ import bannerAvatar from '../../assets/images/banner_img.png'
 import { BsFillArrowRightCircleFill } from 'react-icons/bs';
 // import Snowflake, { findId, makeSnowflake } from '../../component/snow';
 import './banner.css'
+import { useThemeContext } from '../../context/ThemeContext';
+
+import darkBgImage from '../../assets/images/banner_bg_dark.jpg';
+import lightBgImage from '../../assets/images/banner_bg_light.png';
 
 const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
@@ -51,9 +55,10 @@ const Banner = () => {
     return () => { clearInterval(ticker) };
   }, [text, tick, delta])
 
+  const { themeState } = useThemeContext();
 
   return (
-    <section id='banner'>
+    <section id='banner' style={themeState.background === 'bg-1' ? { backgroundImage: `url(${lightBgImage})` } : { backgroundImage: `url(${darkBgImage})` }}>
       <div className="container banner__container">
         <div className="banner__info">
           <span className="tagline">Welcome to my Portfolio</span>
