@@ -24,24 +24,29 @@ const CommentList = () => {
   return (
     <>
       <div className={'container '} >
-        <Swiper className={'mySwiper' + (!user ? ' blur' : '')}
-          slidesPerView={2}
-          spaceBetween={30}
-          breakpoints={{
-            601: { slidesPerView: 3 },
-            1025: { slidesPerView: 5 }
-          }}
-          pagination={{
-            clickable: true,
-          }}
-          modules={[Pagination, Autoplay]}
-          autoplay={true}
-        >
-          {
-            comments &&
-            comments.map(comment => <SwiperSlide key={comment.id}><CommetItem item={comment} /></SwiperSlide>)
-          }
-        </Swiper>
+        <div className={!user ? 'blur' : ''}>
+          <Swiper className={'mySwiper'}
+            slidesPerView={2}
+            spaceBetween={30}
+            breakpoints={{
+              601: { slidesPerView: 3 },
+              1025: { slidesPerView: 5 }
+            }}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[Pagination, Autoplay]}
+            autoplay={{
+              delay: 2000,
+              disableOnInteraction: false,
+            }}
+          >
+            {
+              comments &&
+              comments.map(comment => <SwiperSlide key={comment.id}><CommetItem item={comment} /></SwiperSlide>)
+            }
+          </Swiper>
+        </div>
         {
           !user && <button className='modal__btn' onClick={login}>로그인 버튼</button>
         }

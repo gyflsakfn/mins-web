@@ -3,7 +3,7 @@ import { HashLink } from 'react-router-hash-link';
 import Button from '../../component/ui/Button';
 import User from '../../component/User';
 import { useAuthContext } from '../../context/AuthContext';
-import data from './data'
+import { links } from '../../util/data';
 import './navbar.css'
 
 const Navbar = () => {
@@ -25,7 +25,7 @@ const Navbar = () => {
         </HashLink>
         <ul className='nav__menu'>
           {
-            data.map(item => <li key={item.id}>
+            links.map(item => <li key={item.id}>
               <HashLink to={item.link}>{item.title}</HashLink>
             </li>)
           }
