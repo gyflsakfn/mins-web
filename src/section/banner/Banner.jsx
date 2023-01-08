@@ -16,6 +16,8 @@ const Banner = () => {
   // delta의 값을 초기화
   const period = 3000;
 
+  // TODO: 테마에 따른 배너 이미지 변경
+
   const tick = useCallback(() => {
     let i = loopNum % toRotate.length;  // list의 길이가 3이면, loopNum이 1씩 증가할 때마다 i는 0,1,2 반복
     let fullText = toRotate[i]; // 출력할 Text를 받아옴.

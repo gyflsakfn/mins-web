@@ -2,7 +2,8 @@ import './about.css'
 import Sang from '../../assets/images/sang.jpg'
 import Card from '../../component/Card'
 import cardData from './cardData'
-import contectData from './contectData'
+import { socials } from '../../util/data'
+
 
 const About = () => {
   return (
@@ -30,7 +31,7 @@ const About = () => {
           <p>Hi, my name is Hajia Bintu from Accra, Ghana. I'm a full-stack web developer with a Bachelors degree in Computer Science. My top priority is to get your business online the right way, giving you industry-standard design and all the functionality you need to operate smoothly online. Get in touch today with the details of your project let's get started! Check out my resume below!</p>
           <div className="about__socials">
             {
-              contectData.map(item => <a key={item.id} href={item.link} target="_blank" rel="noopener noreferrer">{item.icon}</a>)
+              socials.map(item => <a key={item.id} href={item.link} target="_blank" rel="noopener noreferrer">{item.icon}</a>)
             }
           </div>
         </div>

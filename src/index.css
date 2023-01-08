@@ -49,7 +49,7 @@ html {
 }
 
 body {
-  font-family: "NanumSquareNeo-Variable";
+  font-family: "NanumSquareNeo-Variable", sans-serif;
   line-height: 1.6;
   font-size: 0.9rem;
 }
