@@ -4,6 +4,8 @@ import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { AuthContextProvider } from "./context/AuthContext";
 import Footer from "./section/footer/Footer";
 import { ModalProvider } from "./context/ModalContext";
+import { ThemeProvider } from "./context/ThemeContext";
+import ThemeComponent from "./component/ThemeComponent";
 
 const queryClient = new QueryClient();
 
@@ -12,11 +14,15 @@ function App() {
     <>
       <QueryClientProvider client={queryClient}>
         <AuthContextProvider>
-          <ModalProvider>
-            <Navbar />
-            <Outlet />
-            <Footer />
-          </ModalProvider>
+          <ThemeProvider>
+            <ModalProvider>
+              <ThemeComponent>
+                <Navbar />
+                <Outlet />
+                <Footer />
+              </ThemeComponent>
+            </ModalProvider>
+          </ThemeProvider>
         </AuthContextProvider>
       </QueryClientProvider>
     </>
