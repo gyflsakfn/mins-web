@@ -76,6 +76,7 @@
 .modal__btn {
   position: absolute;
   background-color: aqua;
+  color: black;
   z-index: 99;
   top: 50%;
   left: 50%;

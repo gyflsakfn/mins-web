@@ -1,4 +1,5 @@
 import React from 'react'
+import Modal from '../component/Modal';
 import About from "../section/about/About";
 import Banner from "../section/banner/Banner";
 import Comments from '../section/comments/Comments';
@@ -14,6 +15,7 @@ const Home = () => {
       <Skills />
       <Portfolio />
       <Comments />
+      <Modal />
     </>
   )
 }
