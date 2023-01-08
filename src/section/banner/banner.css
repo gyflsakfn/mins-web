@@ -15,28 +15,36 @@
 .banner__info .tagline {
   font-weight: 700;
   letter-spacing: 0.8px;
-  padding: 8px 10px;
+  padding: 0.6rem 0.8rem;
   background: linear-gradient(
     90.21deg,
     rgba(170, 54, 124, 0.5) -5.91%,
     rgba(74, 47, 189, 0.5) 111.58%
   );
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  font-size: 1.4rem;
+  color: var(--color-light);
+  border: 1px solid var(--color-black);
+  font-size: 1.2rem;
   margin-bottom: 16px;
   display: inline-block;
 }
 
 .banner__info h1 {
-  margin-bottom: 20px;
+  margin-bottom: 0.2rem;
   display: block;
 }
+
+.banner__info .wrap {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-black);
+}
+
 .banner__info button {
   color: var(--color-black);
   background: transparent;
   font-weight: 700;
   font-size: 1.3rem;
-  margin-top: 60px;
+  margin-top: 6rem;
   letter-spacing: 0.8px;
   display: flex;
   align-items: center;
@@ -52,8 +60,12 @@
 }
 .banner__img img {
   border-radius: 50%;
-  background-color: aliceblue;
+  background-color: var(--color-white);
   animation: updown 3s linear infinite;
+}
+
+.banner__desc {
+  margin-top: 1.4rem;
 }
 
 @keyframes updown {
@@ -69,7 +81,7 @@
 }
 
 .txt-rotate > .wrap {
-  border-right: 0.08em solid #666;
+  border-right: 0.08em solid var(--color-black);
 }
 
 /* MEDIA QUERIES (tablets) */
@@ -82,6 +94,10 @@
   }
   .banner__img {
     width: 50%;
+  }
+
+  .banner__info .wrap {
+    font-size: 2rem;
   }
 }
 

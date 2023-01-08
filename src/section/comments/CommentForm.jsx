@@ -3,9 +3,10 @@ import { addComment } from '../../api/firebase';
 import Button from '../../component/ui/Button';
 
 
-const CommentForm = ({ user }) => {
+const CommentForm = ({ user, commentId }) => {
   const [commentInfo, setCommentInfo] = useState({});
 
+  console.log(commentId)
   const handleChange = (e) => {
     const { name, value, checked } = e.target;
     setCommentInfo((prev) => ({ ...prev, [name]: value, isAnon: checked }))

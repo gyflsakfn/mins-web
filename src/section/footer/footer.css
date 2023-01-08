@@ -19,8 +19,9 @@ footer .nav__menu {
 .footer__socials a {
   background-color: var(--color-black);
   color: var(--color-white);
-  padding: 0.6rem;
+  padding: 0.7rem;
   border-radius: var(--border-radius-3);
+  font-size: 1rem;
   /* 가로 세로 비율 */
   aspect-ratio: 1/1;
   display: grid;
