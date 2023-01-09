@@ -6,6 +6,10 @@ import {
   GoogleAuthProvider,
   signOut,
   onAuthStateChanged,
+<<<<<<< HEAD
+=======
+  signInWithPopup,
+>>>>>>> develop
 } from "firebase/auth";
 import { getDatabase, ref, get, set, remove } from "firebase/database";
 

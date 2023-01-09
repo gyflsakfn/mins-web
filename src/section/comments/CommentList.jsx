@@ -1,5 +1,4 @@
 import React from 'react'
-import { useQuery } from "@tanstack/react-query";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -13,12 +12,11 @@ import "swiper/css/autoplay"
 
 // import required modules
 import { Pagination } from "swiper";
-import { getComments } from '../../api/firebase';
+
 import CommetItem from './CommetItem';
 import { useAuthContext } from '../../context/AuthContext';
 
-const CommentList = () => {
-  const { data: comments } = useQuery(['comments'], getComments)
+const CommentList = ({ comments }) => {
   const { user, login } = useAuthContext();
 
   return (
@@ -37,13 +35,13 @@ const CommentList = () => {
             }}
             modules={[Pagination, Autoplay]}
             autoplay={{
-              delay: 2000,
+              delay: 3000,
               disableOnInteraction: false,
             }}
           >
             {
               comments &&
-              comments.map(comment => <SwiperSlide key={comment.id}><CommetItem item={comment} /></SwiperSlide>)
+              comments.map(comment => <SwiperSlide key={comment.id}><CommetItem item={comment} user={user} /></SwiperSlide>)
             }
           </Swiper>
         </div>

@@ -4,6 +4,7 @@ import Banner from "../section/banner/Banner";
 import Comments from '../section/comments/Comments';
 import Portfolio from "../section/portfolio/Portfolio";
 import Skills from "../section/skills/Skills";
+import Theme from '../theme/Theme';
 
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
       <Skills />
       <Portfolio />
       <Comments />
+      <Theme />
     </>
   )
 }
