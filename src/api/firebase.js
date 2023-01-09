@@ -6,10 +6,6 @@ import {
   GoogleAuthProvider,
   signOut,
   onAuthStateChanged,
-<<<<<<< HEAD
-=======
-  signInWithPopup,
->>>>>>> develop
 } from "firebase/auth";
 import { getDatabase, ref, get, set, remove } from "firebase/database";
 
@@ -19,10 +15,6 @@ const firebaseConfig = {
   authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
   databaseURL: process.env.REACT_APP_FIREBASE_DB_URL,
   projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-  // storageBucket: "mins-portfolio.appspot.com",
-  // messagingSenderId: "134226383041",
-  // appId: "1:134226383041:web:75841d1588d30ad95b0440",
-  // measurementId: "G-TYHB50XYZF",
 };
 
 // Initialize Firebase
