@@ -8,14 +8,23 @@ const CommentForm = ({ user, comments }) => {
   const [isSubmit, setIsSubmit] = useState(isTrue);
 
   const handleChange = (e) => {
-    const { name, value, checked } = e.target;
-    setCommentInfo((prev) => ({ ...prev, [name]: value, isAnon: checked }))
+    const { name, value } = e.target;
+    setCommentInfo((prev) => ({ ...prev, [name]: value }))
+    console.log(value)
+    // console.log(value)
   }
+
+  const isAnonChange = (e) => {
+    const { checked } = e.target;
+    setCommentInfo((prev) => ({ ...prev, isAnon: checked }))
+  }
+
 
   // TODO: isSubmit 상태 이름 변경!! 고민 중...
   const handleSubmit = (e) => {
     e.preventDefault();
     window.alert('완료')
+    console.log(commentInfo)
     addComment(commentInfo, user)
     // setIsSubmit(true);
   }
@@ -34,7 +43,7 @@ const CommentForm = ({ user, comments }) => {
             <div className="input__wrapper">
               <input type="text" name="comment" placeholder="코멘트를 적으세요." onChange={handleChange} />
               <label htmlFor="checkAnon">익명</label>
-              <input id='checkAnon' type="checkbox" name="isAnon" onChange={handleChange} />
+              <input id='checkAnon' type="checkbox" name="isAnon" onChange={isAnonChange} />
             </div>
             <div className="btn__wrapper">
               <Button text='제출하기'></Button>
