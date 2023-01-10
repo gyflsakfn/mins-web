@@ -15,6 +15,7 @@ import { Pagination } from "swiper";
 
 import CommetItem from './CommetItem';
 import { useAuthContext } from '../../context/AuthContext';
+//잉
 
 const CommentList = ({ comments, setUserComment }) => {
   const { user, login } = useAuthContext();
