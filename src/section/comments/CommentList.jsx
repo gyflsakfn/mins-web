@@ -16,7 +16,7 @@ import { Pagination } from "swiper";
 import CommetItem from './CommetItem';
 import { useAuthContext } from '../../context/AuthContext';
 
-const CommentList = ({ comments }) => {
+const CommentList = ({ comments, setUserComment }) => {
   const { user, login } = useAuthContext();
 
   return (
@@ -41,7 +41,7 @@ const CommentList = ({ comments }) => {
           >
             {
               comments &&
-              comments.map(comment => <SwiperSlide key={comment.id}><CommetItem item={comment} user={user} /></SwiperSlide>)
+              comments.map(comment => <SwiperSlide key={comment.id}><CommetItem setUserComment={setUserComment} item={comment} user={user} /></SwiperSlide>)
             }
           </Swiper>
         </div>

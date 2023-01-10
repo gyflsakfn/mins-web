@@ -8,11 +8,8 @@
 }
 
 /* CommentItem */
-.commentItem {
+.comment__card-text {
   margin-top: 0.5rem;
-}
-.commentItem small {
-  word-wrap: break-word;
 }
 
 /* CommentList swiper */

@@ -1,13 +1,13 @@
 
 import React, { useCallback, useRef, useState } from 'react'
-import { addComment } from '../../api/firebase';
+import { addNewComment } from '../../api/firebase';
 import Button from '../../component/ui/Button';
 import User from '../../component/User';
+import { useMutation, useQueryClient } from '@tanstack/react-query'
 
-
-const CommentForm = ({ user, comments }) => {
+const CommentForm = ({ user, comments, isComment }) => {
   const [commentInfo, setCommentInfo] = useState({});
-  const [isUserComment, setUserComment] = useState(isWrite);
+  const { setUserComment, isUserComment } = isComment;
 
   const textRef = useRef();
 
@@ -16,18 +16,32 @@ const CommentForm = ({ user, comments }) => {
     textRef.current.style.height = textRef.current.scrollHeight + 'px';
   }, []);
 
+  const queryClient = useQueryClient();
+
+  const addComment = useMutation(({ commentInfo, user }) => addNewComment(commentInfo, user),
+    {
+      onSuccess: () => queryClient.invalidateQueries('projects'),
+    });
+
   const handleChange = (e) => {
-    const { name, value, checked } = e.target;
-    setCommentInfo((prev) => ({ ...prev, [name]: value, isAnon: checked }))
+    const { name, value } = e.target;
+    setCommentInfo((prev) => ({ ...prev, [name]: value }))
     handleResizeHeight();
+  }
+
+  const isAnonChange = (e) => {
+    const { checked } = e.target;
+    setCommentInfo((prev) => ({ ...prev, isAnon: checked }))
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    window.alert('완료')
-    // TODO: Submit 하면 바로 업데이트
-    addComment(commentInfo, user)
-    // setIsSubmit(true);
+    addComment.mutate({ commentInfo, user }, {
+      onSuccess: () => {
+        window.alert('코멘트가 성공적으로 추가되었습니다.')
+        setUserComment(true);
+      }
+    })
   }
 
   function isWrite() {
@@ -44,7 +58,7 @@ const CommentForm = ({ user, comments }) => {
             <div className="commentForm__user-wrapper">
               {user && <User user={user} />}
               <label htmlFor="checkAnon">익명</label>
-              <input id='checkAnon' type="checkbox" name="isAnon" onChange={handleChange} />
+              <input id='checkAnon' type="checkbox" name="isAnon" onChange={isAnonChange} />
             </div>
             <textarea rows={1} ref={textRef} type="text" name="comment" placeholder="코멘트를 적으세요." onChange={handleChange} />
             <div className="submit__button-wrapper">

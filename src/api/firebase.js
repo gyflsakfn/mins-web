@@ -78,7 +78,7 @@ export async function removeProjects(id) {
 }
 
 /** 코멘트 추가 */
-export async function addComment(comments, user) {
+export async function addNewComment(comments, user) {
   const { uid, displayName } = user;
   return set(ref(database, `comments/${uid}`), {
     id: uid,
@@ -93,4 +93,8 @@ export async function getComments() {
       return Object.values(snapshot.val());
     }
   });
+}
+
+export async function removeComments(commentId) {
+  return remove(ref(database, `comments/${commentId}`));
 }
