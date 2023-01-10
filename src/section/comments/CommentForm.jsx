@@ -44,19 +44,11 @@ const CommentForm = ({ user, comments, isComment }) => {
     })
   }
 
-<<<<<<< HEAD
-  // function isWrite() {
-  //   let result = comments?.filter((comment) => comment.id === user.uid);
-  //   if (result.length === 0) return false;
-  //   else return true
-  // }
-=======
   function isWrite() {
     let result = comments?.filter((comment) => comment.id === user.uid);
     if (result.length === 0) return false;
     else return true
   }
->>>>>>> 87b27fe9de6ffc91d920e2ed6d6b251d8055bb3e
 
   return (
     <>
