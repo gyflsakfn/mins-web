@@ -10,6 +10,7 @@ const CommentForm = ({ user, comments, isComment }) => {
   const { setUserComment, isUserComment } = isComment;
 
   const textRef = useRef();
+  // 추가
 
   const handleResizeHeight = useCallback(() => {
     textRef.current.style.height = 'auto';
