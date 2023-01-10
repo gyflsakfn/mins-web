@@ -2,10 +2,10 @@ import { v4 as uuid } from "uuid";
 import { initializeApp } from "firebase/app";
 import {
   getAuth,
-  signInWithPopup,
   GoogleAuthProvider,
   signOut,
   onAuthStateChanged,
+  signInWithPopup,
 } from "firebase/auth";
 import { getDatabase, ref, get, set, remove } from "firebase/database";
 
@@ -73,7 +73,8 @@ export async function removeProjects(id) {
   return remove(ref(database, `projects/${id}`));
 }
 
-export async function addComment(comments, user) {
+/** 코멘트 추가 */
+export async function addNewComment(comments, user) {
   const { uid, displayName } = user;
   return set(ref(database, `comments/${uid}`), {
     id: uid,
@@ -89,4 +90,8 @@ export async function getComments() {
       return Object.values(snapshot.val());
     }
   });
+}
+
+export async function removeComments(commentId) {
+  return remove(ref(database, `comments/${commentId}`));
 }
