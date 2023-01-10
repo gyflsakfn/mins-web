@@ -79,6 +79,7 @@ export async function addComment(comments, user) {
     id: uid,
     displayName,
     ...comments,
+    // 수정사항 있음..
   });
 }
 
