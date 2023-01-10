@@ -46,7 +46,7 @@ const CommentList = ({ comments }) => {
           </Swiper>
         </div>
         {
-          !user && <button className='modal__btn' onClick={login}>로그인 버튼</button>
+          !user && <button className='modal__btn' onClick={login}>구글 로그인</button>
         }
       </div>
     </>

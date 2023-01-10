@@ -2,6 +2,12 @@
   padding-bottom: 0;
 }
 
+/* Comments */
+.comments__desc {
+  margin-bottom: 1.4rem;
+}
+
+/* CommentItem */
 .commentItem {
   margin-top: 0.5rem;
 }
@@ -9,6 +15,7 @@
   word-wrap: break-word;
 }
 
+/* CommentList swiper */
 .swiper {
   height: 25rem;
   /* this paddint top is to give space for micro interaction on hover of swiper slide */
@@ -31,24 +38,36 @@
 .commentForm {
   display: flex;
   justify-content: center;
-
+  background-color: var(--color-white);
+  margin: 0.4rem 1.6rem;
+  padding: 1rem 2rem;
+  border: 1px solid black;
+  border-radius: var(--border-radius-3);
   gap: 2rem;
 }
 
-.commentForm .input__wrapper {
+.commentForm .commentForm__user-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 1rem;
 }
 
-.commentForm .input__wrapper input {
-  padding: 1rem 2rem;
+.commentForm textarea {
+  resize: none;
+  overflow: hidden;
+  font-size: 0.9rem;
+  background-color: var(--color-light);
+  border-radius: var(--border-radius-3);
+  padding: 0.4rem 1rem;
 }
 
-.commentForm .btn__wrapper {
+.commentForm .submit__button-wrapper {
   display: flex;
   justify-content: flex-end;
+}
+
+.commentForm .submit__button-wrapper button {
+  background-color: var(--color-primary);
 }
 
 /* MEDIA QUERIES (phones) */
@@ -75,13 +94,13 @@
 
 .modal__btn {
   position: absolute;
-  background-color: aqua;
-  color: black;
+  color: var(--color-black);
   z-index: 99;
   top: 50%;
   left: 50%;
   width: 184px;
   height: 42px;
+  font-size: 0.9rem;
   background-color: #4285f4;
   border-radius: 2px;
   box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
