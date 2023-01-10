@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { getComments } from '../../api/firebase';
 
@@ -10,23 +10,19 @@ import CommentList from "./CommentList";
 import './comments.css'
 
 const Comments = () => {
-  const { user } = useAuthContext();
+  const { user, logout } = useAuthContext();
+  const [isUserComment, setUserComment] = useState();
   const { data: comments } = useQuery(['comments'], getComments);
 
   return (
     <section id='comments'>
       <h2>Comments</h2>
-      <p>These are unbiased testmonials from some of my clients</p>
-      {/* {user && <User user={user} />} */}
-      {/* {!user && <Button text={'Login'} onClick={login} />}
-      {user && <Button text={'Logout'} onClick={logout} />} */}
-
-      {/* TODO: CommentForm 로그인 상태이고 작성한 글이 없을 경우 렌더링 */}
+      <p className="comments__desc">These are unbiased testmonials from some of my clients</p>
+      {/* {user && <Button text={'Logout'} onClick={logout} />} */}
       {
-        user && <CommentForm comments={comments} user={user} />
+        user && <CommentForm comments={comments} user={user} isComment={{ isUserComment, setUserComment }} />
       }
-      {/* TODO: CommentList 헤당 유저의 글이 있을 경우 그 글 색상 변경 */}
-      <CommentList comments={comments} user={user} />
+      <CommentList comments={comments} user={user} setUserComment={setUserComment} />
     </section >
   );
 }
