@@ -65,7 +65,7 @@ export async function getProjects() {
   return get(ref(database, "projects")).then((snapshot) => {
     if (snapshot.exists()) {
       return Object.values(snapshot.val());
-    }
+    } else return [];
   });
 }
 

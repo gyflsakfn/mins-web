@@ -29,7 +29,7 @@ const Portfolio = () => {
       <div className="container portfolio__container">
         <ul className="portfolio__projects" >
           {projects &&
-            projects.map(project => <ProjectCard key={project.id} project={project} />)}
+            projects?.map(project => <ProjectCard key={project.id} project={project} />)}
         </ul>
       </div>
 

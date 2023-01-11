@@ -6,6 +6,9 @@ import Footer from "./section/footer/Footer";
 import { ModalProvider } from "./context/ModalContext";
 import { ThemeProvider } from "./context/ThemeContext";
 import ThemeComponent from "./component/ThemeComponent";
+import Theme from "./theme/Theme";
+import { Suspense } from "react";
+import Loading from "./component/Loading";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -24,9 +27,12 @@ function App() {
           <ThemeProvider>
             <ModalProvider>
               <ThemeComponent>
-                <Navbar />
-                <Outlet />
-                <Footer />
+                <Suspense fallback={<Loading />}>
+                  <Navbar />
+                  <Outlet />
+                  <Theme />
+                  <Footer />
+                </Suspense>
               </ThemeComponent>
             </ModalProvider>
           </ThemeProvider>
