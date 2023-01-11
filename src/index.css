@@ -200,11 +200,6 @@ img {
   color: white;
 }
 
-.btn.red {
-  background-color: var(--color-red);
-  color: white;
-}
-
 .btn.primary:hover {
   background: transparent;
   border-color: var(--color-primary);

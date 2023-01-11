@@ -67,6 +67,20 @@
   background-color: var(--color-primary);
 }
 
+.commentForm__Info-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 1.2rem;
+  gap: 0.8rem;
+}
+
+.itemNav__buttono-wrapper {
+  display: flex;
+  margin-top: 1.4rem;
+  justify-content: end;
+}
+
 /* MEDIA QUERIES (phones) */
 @media screen and (max-width: 600px) {
   .commentForm {

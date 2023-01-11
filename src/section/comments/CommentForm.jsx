@@ -4,20 +4,21 @@ import { addNewComment } from '../../api/firebase';
 import Button from '../../component/ui/Button';
 import User from '../../component/User';
 import { useMutation, useQueryClient } from '@tanstack/react-query'
+import { useQuery } from "@tanstack/react-query";
+import { getComments } from '../../api/firebase';
 
-const CommentForm = ({ user, comments, isComment }) => {
+const CommentForm = ({ user, logout }) => {
   const [commentInfo, setCommentInfo] = useState({});
-  const { isUserComment, setIsUserComment } = isComment;
+  const queryClient = useQueryClient();
+  const { data: comments } = useQuery(['comments'], getComments);
 
   const textRef = useRef();
-  // 추가
 
   const handleResizeHeight = useCallback(() => {
     textRef.current.style.height = 'auto';
     textRef.current.style.height = textRef.current.scrollHeight + 'px';
   }, []);
 
-  const queryClient = useQueryClient();
 
   const addComment = useMutation(({ commentInfo, user }) => addNewComment(commentInfo, user),
     {
@@ -38,21 +39,27 @@ const CommentForm = ({ user, comments, isComment }) => {
       onSuccess: () => {
         window.alert('코멘트가 성공적으로 추가되었습니다.')
         setCommentInfo({})
-        setIsUserComment(true);
       }
     })
   }
 
-  function isWrite() {
+  const isWriteFn = useCallback(() => {
     let result = comments?.filter((comment) => comment.id === user.uid);
     if (result.length === 0) return false;
     else return true
-  }
+  }, [comments, user])
+
+  let isWrite = isWriteFn();
 
   return (
     <>
       {
-        isWrite && isUserComment ? <p>{`${user.displayName}님 작성해주셔서 감사합니다.`}</p> :
+        isWrite ?
+          <div className="commentForm__Info-wrapper">
+            <p>{`${user.displayName}님 작성해주셔서 감사합니다.`}</p>
+            <Button onClick={logout} size='sm' text={'로그아웃'} />
+          </div>
+          :
           <form onSubmit={handleSubmit} className="commentForm">
             <div className="commentForm__user-wrapper">
               {user && <User user={user} />}

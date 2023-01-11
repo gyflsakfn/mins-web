@@ -9,16 +9,7 @@ import './navbar.css'
 import { useModalContext } from '../../context/ModalContext';
 
 const Navbar = () => {
-  const { user, login, logout } = useAuthContext();
   const { showModalHandler } = useModalContext();
-
-  const handleLogin = () => {
-    login();
-  }
-
-  const handleLogout = () => {
-    logout();
-  }
 
   return (
     <nav>
@@ -34,9 +25,6 @@ const Navbar = () => {
           }
         </ul>
         {/* <button id='theme__icon' onClick={showModalHandler}><IoIosColorPalette /></button> */}
-        {user && <User user={user} />}
-        {!user && <Button text={'Login'} onClick={handleLogin} />}
-        {user && <Button text={'Logout'} onClick={handleLogout} />}
         <button id='theme__icon' onClick={showModalHandler} ><IoSettingsOutline /></button>
       </div>
     </nav>
