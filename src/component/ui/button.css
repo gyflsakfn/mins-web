@@ -1,3 +1,38 @@
+.button {
+  display: inline-block;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: "NanumSquareNeo-Variable";
+  color: var(--color-black);
+  padding: 0.6rem 2.5rem;
+  border: 2px solid transparent;
+  border-radius: var(--border-radius-3);
+  cursor: pointer;
+}
+.button.sm {
+  padding: 0.3rem 0.9rem;
+}
+
+.button:hover {
+  background-color: var(--color-white);
+  transform: scale(1.1);
+  transition: var(--transition);
+}
+
+.button_default {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+.button_green {
+  background-color: #64c964;
+}
+.button_red {
+  background-color: #fd565f;
+  border-color: #fd565f;
+}
+
 .googleBtn {
   background-color: var(--color-white);
   color: var(--color-black);
@@ -9,4 +44,9 @@
 
 .googleBtn:hover {
   background-color: var(--color-light);
+}
+
+.btn.red {
+  background-color: var(--color-red);
+  color: white;
 }

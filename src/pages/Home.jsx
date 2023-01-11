@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { Suspense } from 'react'
+import Loading from '../component/Loading';
 import About from "../section/about/About";
 import Banner from "../section/banner/Banner";
 import Comments from '../section/comments/Comments';
@@ -14,7 +15,9 @@ const Home = () => {
       <About />
       <Skills />
       <Portfolio />
-      <Comments />
+      <Suspense fallback={<Loading />}>
+        <Comments />
+      </Suspense>
       <Theme />
     </>
   )

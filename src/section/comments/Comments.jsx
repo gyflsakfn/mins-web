@@ -1,7 +1,5 @@
 
-import React, { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { getComments } from '../../api/firebase';
+import React from "react";
 
 import { useAuthContext } from '../../context/AuthContext';
 
@@ -10,19 +8,16 @@ import CommentList from "./CommentList";
 import './comments.css'
 
 const Comments = () => {
-  const { user, logout } = useAuthContext();
-  const [isUserComment, setUserComment] = useState();
-  const { data: comments } = useQuery(['comments'], getComments);
+  const { user, login, logout } = useAuthContext();
 
   return (
     <section id='comments'>
       <h2>Comments</h2>
-      <p className="comments__desc">These are unbiased testmonials from some of my clients</p>
-      {/* {user && <Button text={'Logout'} onClick={logout} />} */}
+      <p>These are unbiased testmonials from some of my clients</p>
       {
-        user && <CommentForm comments={comments} user={user} isComment={{ isUserComment, setUserComment }} />
+        user && <CommentForm user={user} logout={logout} />
       }
-      <CommentList comments={comments} user={user} setUserComment={setUserComment} />
+      <CommentList user={user} login={login} />
     </section >
   );
 }

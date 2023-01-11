@@ -4,10 +4,13 @@ import { addNewComment } from '../../api/firebase';
 import Button from '../../component/ui/Button';
 import User from '../../component/User';
 import { useMutation, useQueryClient } from '@tanstack/react-query'
+import { useQuery } from "@tanstack/react-query";
+import { getComments } from '../../api/firebase';
 
-const CommentForm = ({ user, comments, isComment }) => {
+const CommentForm = ({ user, logout }) => {
   const [commentInfo, setCommentInfo] = useState({});
-  const { setUserComment, isUserComment } = isComment;
+  const queryClient = useQueryClient();
+  const { data: comments } = useQuery(['comments'], getComments);
 
   const textRef = useRef();
 
@@ -16,7 +19,6 @@ const CommentForm = ({ user, comments, isComment }) => {
     textRef.current.style.height = textRef.current.scrollHeight + 'px';
   }, []);
 
-  const queryClient = useQueryClient();
 
   const addComment = useMutation(({ commentInfo, user }) => addNewComment(commentInfo, user),
     {
@@ -24,14 +26,11 @@ const CommentForm = ({ user, comments, isComment }) => {
     });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const target = e.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value
+    const name = target.name
     setCommentInfo((prev) => ({ ...prev, [name]: value }))
     handleResizeHeight();
-  }
-
-  const isAnonChange = (e) => {
-    const { checked } = e.target;
-    setCommentInfo((prev) => ({ ...prev, isAnon: checked }))
   }
 
   const handleSubmit = (e) => {
@@ -39,28 +38,36 @@ const CommentForm = ({ user, comments, isComment }) => {
     addComment.mutate({ commentInfo, user }, {
       onSuccess: () => {
         window.alert('코멘트가 성공적으로 추가되었습니다.')
-        setUserComment(true);
+        setCommentInfo({})
       }
     })
   }
 
-  function isWrite() {
+
+  const isWriteFn = useCallback(() => {
     let result = comments?.filter((comment) => comment.id === user.uid);
     if (result.length === 0) return false;
     else return true
-  }
+  }, [comments, user])
+
+  let isWrite = isWriteFn();
 
   return (
     <>
       {
-        isUserComment ? <p>{`${user.displayName}님 작성해주셔서 감사합니다.`}</p> :
+        isWrite ?
+          <div className="commentForm__Info-wrapper">
+            <p>{`${user.displayName}님 작성해주셔서 감사합니다.`}</p>
+            <Button onClick={logout} size='sm' text={'로그아웃'} />
+          </div>
+          :
           <form onSubmit={handleSubmit} className="commentForm">
             <div className="commentForm__user-wrapper">
               {user && <User user={user} />}
               <label htmlFor="checkAnon">익명</label>
-              <input id='checkAnon' type="checkbox" name="isAnon" onChange={isAnonChange} />
+              <input id='checkAnon' type="checkbox" name="isAnon" value={commentInfo.isAnon ?? false} onChange={handleChange} />
             </div>
-            <textarea rows={1} ref={textRef} type="text" name="comment" placeholder="코멘트를 적으세요." onChange={handleChange} />
+            <textarea rows={1} ref={textRef} type="text" name="comment" value={commentInfo.comment ?? ''} placeholder="코멘트를 적으세요." onChange={handleChange} />
             <div className="submit__button-wrapper">
               <Button text='작성하기'></Button>
             </div>
