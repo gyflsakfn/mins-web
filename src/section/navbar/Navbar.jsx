@@ -1,9 +1,6 @@
 
 import { HashLink } from 'react-router-hash-link';
-import Button from '../../component/ui/Button';
-import User from '../../component/User';
 import { IoSettingsOutline } from 'react-icons/io5'
-import { useAuthContext } from '../../context/AuthContext';
 import { links } from '../../util/data';
 import './navbar.css'
 import { useModalContext } from '../../context/ModalContext';
