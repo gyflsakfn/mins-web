@@ -4,7 +4,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { removeComments } from '../../api/firebase';
 
 
-const CommetItem = ({ item, user, setUserComment }) => {
+const CommetItem = ({ item, user, setIsUserComment }) => {
   const { id, displayName, comment, isAnon } = item;
 
   const queryClient = useQueryClient();
@@ -16,7 +16,7 @@ const CommetItem = ({ item, user, setUserComment }) => {
   const removeCommentHandler = () => {
     removeProject.mutate({ id }, {
       onSuccess: () => {
-        setUserComment(false)
+        setIsUserComment(false)
         window.alert('삭제되었습니다.')
       }
     })

@@ -17,7 +17,7 @@ import CommetItem from './CommetItem';
 import { useAuthContext } from '../../context/AuthContext';
 //잉
 
-const CommentList = ({ comments, setUserComment }) => {
+const CommentList = ({ comments, setIsUserComment }) => {
   const { user, login } = useAuthContext();
 
   return (
@@ -42,7 +42,7 @@ const CommentList = ({ comments, setUserComment }) => {
           >
             {
               comments &&
-              comments.map(comment => <SwiperSlide key={comment.id}><CommetItem setUserComment={setUserComment} item={comment} user={user} /></SwiperSlide>)
+              comments.map(comment => <SwiperSlide key={comment.id}><CommetItem setIsUserComment={setIsUserComment} item={comment} user={user} /></SwiperSlide>)
             }
           </Swiper>
         </div>
