@@ -13,7 +13,7 @@ const Comments = () => {
   return (
     <section id='comments'>
       <h2>Comments</h2>
-      <p>좋은 사람들의 감사한 한마디</p>
+      <p>코멘트를 남겨주세요. 어떠한 말이든 </p>
       {
         user && <CommentForm user={user} logout={logout} />
       }

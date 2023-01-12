@@ -14,7 +14,7 @@ const CommetItem = ({ item, user }) => {
         <small>{comment}</small>
       </div>
       {
-        user?.uid === id ? <ItemNav id={id} /> : null
+        user?.uid === id || user?.isAdmin ? <ItemNav id={id} /> : null
       }
     </Card>
   )

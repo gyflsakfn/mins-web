@@ -58,7 +58,7 @@ const CommentForm = ({ user, logout }) => {
         isWrite ?
           <div className="commentForm__Info-wrapper">
             <p>{`${user.displayName}님 작성해주셔서 감사합니다.`}</p>
-            <Button onClick={logout} size='sm' text={'로그아웃'} />
+            <Button onClick={logout} color={'red'} size='sm' text={'로그아웃'} />
           </div>
           :
           <form onSubmit={handleSubmit} className="commentForm">
@@ -71,6 +71,7 @@ const CommentForm = ({ user, logout }) => {
             </div>
             <textarea rows={1} ref={textRef} type="text" name="comment" value={commentInfo.comment ?? ''} placeholder="코멘트를 적으세요." onChange={handleChange} />
             <div className="submit__button-wrapper">
+              <Button type={'button'} onClick={logout} size='sm' color={'red'} text={'로그아웃'} />
               <Button text='작성하기'></Button>
             </div>
           </form>

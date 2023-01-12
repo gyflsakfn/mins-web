@@ -74,10 +74,7 @@
 .commentForm .submit__button-wrapper {
   display: flex;
   justify-content: flex-end;
-}
-
-.commentForm .submit__button-wrapper button {
-  background-color: var(--color-primary);
+  gap: 1rem;
 }
 
 .commentForm__Info-wrapper {
