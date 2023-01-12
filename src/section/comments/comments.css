@@ -38,7 +38,6 @@
   background-color: var(--color-white);
   margin: 0.4rem 1.4rem;
   padding: 1.2rem 1.6rem;
-  border: 1px solid black;
   border-radius: var(--border-radius-3);
   gap: 2rem;
 }

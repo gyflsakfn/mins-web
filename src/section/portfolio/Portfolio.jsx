@@ -1,10 +1,10 @@
 import './portfolio.css'
 import { useAuthContext } from '../../context/AuthContext';
-import { BsFillPencilFill } from 'react-icons/bs'
+import { useQuery } from "@tanstack/react-query";
 import { Link } from 'react-router-dom';
 import { getProjects } from '../../api/firebase';
+import { BsFillPencilFill } from 'react-icons/bs'
 import ProjectCard from './ProjectCard';
-import { useQuery } from "@tanstack/react-query";
 
 const Portfolio = () => {
   const { isLoading, error, data: projects } = useQuery(['projects'], getProjects)
@@ -13,21 +13,20 @@ const Portfolio = () => {
   return (
     <section id='portfolio'>
       <h2>Recent Projects</h2>
-      <p>
-        Check out some of the projects I recently worked on for my clients. Use the buttons to toggle the different categories.
-      </p>
-      {user?.isAdmin && (
-        <Link to={'/newPortfolio'}>
-          <div className="newPortfolio__button">
-            <BsFillPencilFill />
-          </div>
-        </Link>
-      )}
+      <p>최근 작업한 프로젝트 목록입니다. 꾸준한 업데이트로 개선해나가고 있습니다.</p>
+      {
+        user?.isAdmin && (
+          <Link to={'/newPortfolio'}>
+            <div className="newPortfolio__button">
+              <BsFillPencilFill />
+            </div>
+          </Link>
+        )}
 
       {isLoading && <p>Loading..</p>}
       {error && <p>{error}</p>}
       <div className="container portfolio__container">
-        <ul className="portfolio__projects" >
+        <ul className="portfolio__projects">
           {projects &&
             projects?.map(project => <ProjectCard key={project.id} project={project} />)}
         </ul>

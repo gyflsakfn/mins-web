@@ -55,7 +55,7 @@ const NewPortfolio = () => {
           <div>
             <input type="file" accept='image/#' name='file' required onChange={handleChange} />
             <input type="text" name='title' value={project.title ?? ''} placeholder='프로젝트명' required onChange={handleChange} />
-            <input type="text" name='category' value={project.category ?? ''} placeholder='카테고리' required onChange={handleChange} />
+            <input type="text" name='desc' value={project.desc ?? ''} placeholder='설명' required onChange={handleChange} />
             <input type="text" name='demoUrl' value={project.demoUrl ?? ''} placeholder='데모 사이트' required onChange={handleChange} />
             <input type="text" name='gitUrl' value={project.gitUrl ?? ''} placeholder='깃헙 주소' required onChange={handleChange} />
           </div>
