@@ -13,7 +13,7 @@ const Banner = () => {
   // 삭제의 상태를 가지며, 처음에는 우리가 단어를 입력하는 것으로 시작하기 때문에 false로 설정
   const [isDeleting, setIsDeleting] = useState(false);
   // 애니메이션을 수행할 목록
-  const toRotate = ['Web Developer', 'FrontEnd Developer'];
+  const toRotate = ['Web Developer', 'Front-End Developer'];
   const [text, setText] = useState('');
   // 하나의 문자가 입력 혹은 삭제 되는 데 걸리는 시간
   const [delta, setDelta] = useState(300 - Math.random() * 100);
@@ -70,7 +70,6 @@ const Banner = () => {
         </div>
       </div>
     </section >
-
   )
 }
 

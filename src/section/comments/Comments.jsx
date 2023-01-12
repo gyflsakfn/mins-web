@@ -18,7 +18,7 @@ const Comments = () => {
         user && <CommentForm user={user} logout={logout} />
       }
       <CommentList user={user} login={login} />
-    </section >
+    </section>
   );
 }
 
