@@ -4,7 +4,6 @@ import Card from '../../component/Card'
 import cardData from './cardData'
 import { socials } from '../../util/data'
 
-
 const About = () => {
   return (
     <section id='about'>
@@ -27,8 +26,14 @@ const About = () => {
               )
             }
           </div>
-          <p>Building projects my clients love have always been my passion. Being in the web development industry for over 3 years and serving more than 70 happy clients worldwide, I'm always motivated to do more!</p>
-          <p>Hi, my name is Hajia Bintu from Accra, Ghana. I'm a full-stack web developer with a Bachelors degree in Computer Science. My top priority is to get your business online the right way, giving you industry-standard design and all the functionality you need to operate smoothly online. Get in touch today with the details of your project let's get started! Check out my resume below!</p>
+          <p>내용 채우기! 1. 동해물과 백두산이 마르고 닳도록
+            하느님이 보우하사 우리나라 만세
+            무궁화 삼천리 화려 강산
+            대한 사람 대한으로 길이 보전하세</p>
+          <p>안녕하세요. 저는 김정민입니다. 2. 남산 위에 저 소나무 철갑을 두른 듯
+            바람 서리 불변함은 우리 기상일세
+            무궁화 삼천리 화려 강산
+            대한 사람 대한으로 길이 보전하세</p>
           <div className="about__socials">
             {
               socials.map(item => <a key={item.id} href={item.link} target="_blank" rel="noopener noreferrer">{item.icon}</a>)

@@ -5,9 +5,10 @@ import ts from "../../assets/images/ts.png";
 import sass from "../../assets/images/sass.png";
 import git from "../../assets/images/git.png";
 import reactjs from "../../assets/images/react.svg";
-import nextjs from "../../assets/images/nextjs.svg";
+import nextjs from "../../assets/images/nextjs.png";
+import firebase from "../../assets/images/firebase.png";
 
-const data = [
+export const frontend = [
   { id: 1, logoImg: html5, title: "HTML5" },
   { id: 2, logoImg: css3, title: "CSS3" },
   { id: 3, logoImg: js, title: "JavaScript" },
@@ -18,4 +19,4 @@ const data = [
   { id: 8, logoImg: nextjs, title: "NextJs" },
 ];
 
-export default data;
+export const backend = [{ id: 1, logoImg: firebase, title: "Firebase" }];

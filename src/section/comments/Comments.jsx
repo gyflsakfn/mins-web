@@ -13,7 +13,7 @@ const Comments = () => {
   return (
     <section id='comments'>
       <h2>Comments</h2>
-      <p>These are unbiased testmonials from some of my clients</p>
+      <p>좋은 사람들의 감사한 한마디</p>
       {
         user && <CommentForm user={user} logout={logout} />
       }

@@ -64,8 +64,10 @@ const CommentForm = ({ user, logout }) => {
           <form onSubmit={handleSubmit} className="commentForm">
             <div className="commentForm__user-wrapper">
               {user && <User user={user} />}
-              <label htmlFor="checkAnon">익명</label>
-              <input id='checkAnon' type="checkbox" name="isAnon" value={commentInfo.isAnon ?? false} onChange={handleChange} />
+              <div className="commentForm__checkbox-wrapper">
+                <label htmlFor="checkAnon">익명</label>
+                <input id='checkAnon' type="checkbox" name="isAnon" value={commentInfo.isAnon ?? false} onChange={handleChange} />
+              </div>
             </div>
             <textarea rows={1} ref={textRef} type="text" name="comment" value={commentInfo.comment ?? ''} placeholder="코멘트를 적으세요." onChange={handleChange} />
             <div className="submit__button-wrapper">

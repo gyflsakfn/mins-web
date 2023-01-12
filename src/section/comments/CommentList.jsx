@@ -37,7 +37,7 @@ const CommentList = ({ user, login }) => {
           >
             {
               comments &&
-              comments.map(comment => <SwiperSlide key={comment.id}><CommetItem item={comment} user={user} /></SwiperSlide>)
+              comments?.map(comment => <SwiperSlide key={comment.id}><CommetItem item={comment} user={user} /></SwiperSlide>)
             }
           </Swiper>
         </div>
