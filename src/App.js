@@ -4,7 +4,7 @@ import { ModalProvider } from "./context/ModalContext";
 import { ThemeProvider } from "./context/ThemeContext";
 import ThemeComponent from "./component/ThemeComponent";
 import { Suspense } from "react";
-import Loading from "./component/Loading";
+import Loading from "./component/ui/Loading";
 
 const queryClient = new QueryClient({
   defaultOptions: {
