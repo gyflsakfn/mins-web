@@ -9,7 +9,7 @@ const ThemeComponent = () => {
   const { themeState } = useThemeContext();
   const mainRef = useRef();
 
-  const [showFloatingNav, setShowFloatingNav] = useState(true);
+  const [showFloatingNav, setShowFloatingNav] = useState(false);
   const [siteYPosition, setSiteYPosition] = useState(0);
 
   const showFloatingNavHandler = () => {
@@ -25,18 +25,16 @@ const ThemeComponent = () => {
   const floatingNavToggleHandler = useCallback(() => {
     let currentY = (mainRef?.current?.getBoundingClientRect().y);
     // 20px정도 움직였다면
-    if (siteYPosition < currentY - 20 || siteYPosition > currentY + 20) {
+    if (siteYPosition < currentY - 100 || siteYPosition > currentY + 100) {
       showFloatingNavHandler();
     } else {
       hideFloatingNavHandler();
     }
-
     setSiteYPosition(currentY);
   }, [siteYPosition]);
 
   useEffect(() => {
-    const checkYPosition = setInterval(floatingNavToggleHandler, 1600);
-
+    const checkYPosition = setInterval(floatingNavToggleHandler, 1800);
     // cleanup
     return () => clearInterval(checkYPosition);
   }, [siteYPosition, floatingNavToggleHandler]);

@@ -1,6 +1,7 @@
 import './footer.css'
 import { links, socials } from '../../util/data'
 import { HashLink } from 'react-router-hash-link'
+import React from 'react'
 
 const Footer = () => {
   return (
@@ -28,4 +29,4 @@ const Footer = () => {
   )
 }
 
-export default Footer
+export default React.memo(Footer)

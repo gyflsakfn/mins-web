@@ -1,6 +1,4 @@
-import React from 'react'
-import { useQuery } from "@tanstack/react-query";
-import { getComments } from '../../api/firebase';
+import React, { memo } from 'react'
 
 // Import Swiper React components & Swiper styles
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -12,9 +10,11 @@ import "swiper/css/autoplay"
 import { Pagination } from "swiper";
 
 import CommetItem from './CommetItem';
+import { FcGoogle } from 'react-icons/fc'
 
-const CommentList = ({ user, login }) => {
-  const { data: comments } = useQuery(['comments'], getComments);
+const CommentList = ({ user, login, comments }) => {
+
+
   return (
     <>
       <div className={'container '} >
@@ -42,11 +42,11 @@ const CommentList = ({ user, login }) => {
           </Swiper>
         </div>
         {
-          !user && <button className='modal__btn' onClick={login}>구글 로그인</button>
+          !user && <button className='modal__btn' onClick={login}><FcGoogle /> 구글 로그인</button>
         }
       </div>
     </>
   )
 }
 
-export default CommentList
+export default memo(CommentList)

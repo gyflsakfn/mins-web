@@ -8,7 +8,6 @@ import Portfolio from "../section/portfolio/Portfolio";
 import Skills from "../section/skills/Skills";
 
 const Home = () => {
-
   const { showFloatingNav } = useOutletContext();
   return (
     <>

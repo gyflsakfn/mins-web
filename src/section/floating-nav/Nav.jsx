@@ -1,3 +1,4 @@
+import { memo } from "react"
 
 const Nav = ({ className, item }) => {
   return (
@@ -5,4 +6,4 @@ const Nav = ({ className, item }) => {
   )
 }
 
-export default Nav
+export default memo(Nav)

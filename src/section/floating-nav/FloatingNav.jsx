@@ -2,6 +2,7 @@ import data from './data'
 import Scrollspy from 'react-scrollspy'
 import Nav from './Nav'
 import './floating-nav.css'
+import React, { memo } from 'react'
 
 const FloatingNav = () => {
   return (
@@ -15,4 +16,4 @@ const FloatingNav = () => {
   )
 }
 
-export default FloatingNav
+export default memo(FloatingNav);

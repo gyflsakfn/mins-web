@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
-import { addNewProject } from '../api/firebase';
 import { uploadImage } from '../api/uploader';
 import Button from '../component/ui/Button';
+import useProjects from '../hooks/useProjects';
 import './newportfolio.css'
-import { useMutation, useQueryClient } from '@tanstack/react-query'
 
 const NewPortfolio = () => {
   const [project, setProject] = useState({});
@@ -11,11 +10,7 @@ const NewPortfolio = () => {
   const [isUploading, setIsUploading] = useState(false);
   const [success, setSuccess] = useState();
 
-  const queryClient = useQueryClient();
-  const addProject = useMutation(({ project, url }) => addNewProject(project, url),
-    {
-      onSuccess: () => queryClient.invalidateQueries('projects'),
-    });
+  const { addProject } = useProjects();
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
