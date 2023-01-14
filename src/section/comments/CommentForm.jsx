@@ -1,5 +1,5 @@
 
-import React, { useCallback, useRef, useState } from 'react'
+import React, { memo, useCallback, useRef, useState } from 'react'
 import { addNewComment } from '../../api/firebase';
 import Button from '../../component/ui/Button';
 import User from '../../component/User';
@@ -86,4 +86,4 @@ const CommentForm = ({ user, logout }) => {
   )
 }
 
-export default CommentForm
+export default memo(CommentForm)

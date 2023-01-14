@@ -8,6 +8,7 @@ import Portfolio from "../section/portfolio/Portfolio";
 import Skills from "../section/skills/Skills";
 
 const Home = () => {
+  console.log('홈 렌더링');
 
   const { showFloatingNav } = useOutletContext();
   return (

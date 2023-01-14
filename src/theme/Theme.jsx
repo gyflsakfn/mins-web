@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import Modal from '../component/Modal'
 import BackgroundColor from './BackgroundColor'
 import { backgroundColors, primaryColors } from './data'
@@ -5,6 +6,7 @@ import PrimaryColor from './PrimaryColor'
 import './theme.css'
 
 const Theme = () => {
+  console.log('the렌더')
   return (
     <Modal className='theme__modal'>
       <h3>테마 커스터마이징</h3>
@@ -30,4 +32,4 @@ const Theme = () => {
   )
 }
 
-export default Theme
+export default memo(Theme)

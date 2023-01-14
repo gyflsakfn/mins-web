@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { useQuery } from "@tanstack/react-query";
 import { getComments } from '../../api/firebase';
 
@@ -49,4 +49,4 @@ const CommentList = ({ user, login }) => {
   )
 }
 
-export default CommentList
+export default memo(CommentList)

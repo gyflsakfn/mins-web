@@ -4,6 +4,7 @@ import { IoSettingsOutline } from 'react-icons/io5'
 import { links } from '../../util/data';
 import './navbar.css'
 import { useModalContext } from '../../context/ModalContext';
+import React from 'react';
 
 const Navbar = () => {
   const { showModalHandler } = useModalContext();
@@ -28,4 +29,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default React.memo(Navbar);

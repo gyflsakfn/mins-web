@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { getProjects } from '../../api/firebase';
 import { BsFillPencilFill } from 'react-icons/bs'
 import ProjectCard from './ProjectCard';
+import { memo } from 'react';
 
 const Portfolio = () => {
   const { isLoading, error, data: projects } = useQuery(['projects'], getProjects)
@@ -36,4 +37,4 @@ const Portfolio = () => {
   )
 }
 
-export default Portfolio
+export default memo(Portfolio)

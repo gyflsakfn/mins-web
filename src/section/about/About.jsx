@@ -3,6 +3,7 @@ import Sang from '../../assets/images/sang.jpg'
 import Card from '../../component/Card'
 import cardData from './cardData'
 import { socials } from '../../util/data'
+import { memo } from 'react'
 
 const About = () => {
   return (
@@ -45,4 +46,4 @@ const About = () => {
   )
 }
 
-export default About
+export default memo(About)

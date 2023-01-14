@@ -1,5 +1,5 @@
 
-import React from "react";
+import { memo } from "react";
 
 import { useAuthContext } from '../../context/AuthContext';
 
@@ -22,7 +22,7 @@ const Comments = () => {
   );
 }
 
-export default Comments
+export default memo(Comments)
 
 
 

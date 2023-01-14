@@ -4,6 +4,7 @@ import { BiData } from "react-icons/bi";
 import { frontend, backend } from './data'
 
 import './skills.css'
+import { memo } from 'react';
 
 const Skills = () => {
   return (
@@ -43,11 +44,9 @@ const Skills = () => {
             </div>
           </div>
         </Card>
-
-
       </div>
     </section>
   )
 }
 
-export default Skills
+export default memo(Skills)
