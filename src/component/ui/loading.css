@@ -13,10 +13,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 .loading span {
   font-size: 3rem;
   color: #fff;
   font-family: "KOTRAHOPE";
+  margin: 0;
+  padding: 0;
 }
