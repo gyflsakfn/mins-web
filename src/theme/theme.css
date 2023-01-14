@@ -48,24 +48,23 @@
 }
 
 .theme__primary-colors .color-1 {
-  background-color: hsl(270, 70%, 46%);
+  background-color: hsl(195, 73%, 55%);
 }
 .theme__primary-colors .color-2 {
-  background-color: hsl(110, 70%, 46%);
+  background-color: hsl(0, 93%, 71%);
 }
 .theme__primary-colors .color-3 {
-  background-color: hsl(240, 70%, 46%);
+  background-color: hsl(45, 92%, 71%);
 }
 .theme__primary-colors .color-4 {
-  background-color: hsl(325, 70%, 46%);
+  background-color: hsl(342, 100%, 78%);
 }
 .theme__primary-colors .color-5 {
-  background-color: hsl(0, 70%, 46%);
+  background-color: hsl(103, 33%, 72%);
 }
 .theme__primary-colors .color-6 {
-  background-color: hsl(52, 70%, 46%);
+  background-color: hsl(318, 31%, 36%);
 }
-
 .theme__background-colors {
   display: flex;
   justify-content: center;

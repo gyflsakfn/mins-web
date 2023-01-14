@@ -17,14 +17,20 @@
 }
 
 :root {
-  --primary-hue: 270;
+  --primary-hue: 167;
+  --primary-sat: 75%;
+  --priamry-light: 78%;
   --black-lightness: 15%;
   --dark-lightness: 44%;
   --light-lightness: 94%;
   --white-lightness: 100%;
   /* HSL: 색상, 채도, 명도의 앞글자 */
   /* Hue: 색상, Saturation: 채도, Lightness: 명도 */
-  --color-primary: hsl(var(--primary-hue), 90%, 41%);
+  --color-primary: hsl(
+    var(--primary-hue),
+    var(--primary-sat),
+    var(--priamry-light)
+  );
   --color-white: hsl(0, 5%, var(--white-lightness));
   --color-light: hsl(var(--primary-hue), 5%, var(--light-lightness));
   --color-black: hsl(var(--primary-hue), 5%, var(--black-lightness));
@@ -56,22 +62,34 @@ body {
 
 /*  THEME change using react  */
 main.color-1 {
-  --primary-hue: 270;
+  --primary-hue: 195;
+  --primary-sat: 73%;
+  --priamry-light: 55%;
 }
 main.color-2 {
-  --primary-hue: 110;
+  --primary-hue: 0;
+  --primary-sat: 93%;
+  --priamry-light: 71%;
 }
 main.color-3 {
-  --primary-hue: 240;
+  --primary-hue: 45;
+  --primary-sat: 92%;
+  --priamry-light: 71%;
 }
 main.color-4 {
-  --primary-hue: 325;
+  --primary-hue: 342;
+  --primary-sat: 100%;
+  --priamry-light: 78%;
 }
 main.color-5 {
-  --primary-hue: 0;
+  --primary-hue: 103;
+  --primary-sat: 33%;
+  --priamry-light: 72%;
 }
 main.color-6 {
-  --primary-hue: 55;
+  --primary-hue: 318;
+  --primary-sat: 31%;
+  --priamry-light: 36%;
 }
 
 main.bg-2 {
@@ -87,7 +105,11 @@ main.bg-2 {
 
 main {
   color: var(--color-dark);
-  --color-primary: hsl(var(--primary-hue), 89%, 41%);
+  --color-primary: hsl(
+    var(--primary-hue),
+    var(--primary-sat),
+    var(--priamry-light)
+  );
 }
 
 /* GENERAL CONTAINER CLASS */
