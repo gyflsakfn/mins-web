@@ -1,5 +1,5 @@
 #banner {
-  margin-top: 4rem;
+  margin-top: 3rem;
   height: calc(100vh - 4rem);
   background-position: top center;
   background-size: cover;
@@ -109,5 +109,15 @@
   } */
   .banner__img {
     display: none;
+  }
+  .banner__info .tagline {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.7rem;
+  }
+  .banner__info .wrap {
+    font-size: 1.7rem;
+  }
+  .banner__desc {
+    font-size: 0.9rem;
   }
 }
