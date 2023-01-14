@@ -8,6 +8,9 @@
 }
 
 /* CommentItem */
+.card:hover {
+  transform: translateY(0);
+}
 .comment__card-text {
   margin-top: 0.5rem;
 }
@@ -115,18 +118,26 @@
 
 .modal__btn {
   position: absolute;
-  color: var(--color-black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
   z-index: 99;
   top: 35%;
   left: 50%;
-  width: 184px;
-  height: 42px;
-  font-size: 0.9rem;
+  width: 198px;
+  height: 46px;
+  font-size: 1rem;
   background-color: #4285f4;
+  color: #fff;
   border-radius: 2px;
   box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
   transform: translate(-50%, -50%);
   cursor: pointer;
+  gap: 0.6rem;
+}
+.modal__btn svg {
+  font-size: 1.4rem;
 }
 
 .my {

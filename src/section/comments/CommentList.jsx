@@ -10,6 +10,7 @@ import "swiper/css/autoplay"
 import { Pagination } from "swiper";
 
 import CommetItem from './CommetItem';
+import { FcGoogle } from 'react-icons/fc'
 
 const CommentList = ({ user, login, comments }) => {
 
@@ -41,7 +42,7 @@ const CommentList = ({ user, login, comments }) => {
           </Swiper>
         </div>
         {
-          !user && <button className='modal__btn' onClick={login}>구글 로그인</button>
+          !user && <button className='modal__btn' onClick={login}><FcGoogle /> 구글 로그인</button>
         }
       </div>
     </>
