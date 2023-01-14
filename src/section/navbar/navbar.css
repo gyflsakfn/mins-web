@@ -1,6 +1,6 @@
 nav {
   width: 100vw;
-  height: 4.5rem;
+  height: 4rem;
   display: grid;
   place-items: center;
   background: var(--color-primary);
@@ -56,9 +56,16 @@ nav {
   cursor: pointer;
 }
 
-/* HIDE NAV MENU ON TABLETS AND PHONES */
+/* HIDE NAV MENU ON TABLETS */
 @media screen and (max-width: 1024px) {
   .nav__menu {
     display: none;
+  }
+}
+
+/* MEDIA QUERIES (phones) */
+@media screen and (max-width: 600px) {
+  nav {
+    height: 3.5rem;
   }
 }
