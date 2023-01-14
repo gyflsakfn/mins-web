@@ -1,7 +1,7 @@
 #banner {
-  margin-top: 3rem;
+  margin-top: 4rem;
   height: calc(100vh - 4rem);
-  background-position: top center;
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -43,14 +43,14 @@
   color: var(--color-black);
   background: transparent;
   font-weight: 700;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   margin-top: 6rem;
   letter-spacing: 0.8px;
   display: flex;
   align-items: center;
 }
 .banner__info button svg {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   margin-left: 10px;
   transition: 0.3s ease-in-out;
   line-height: 1;
@@ -103,21 +103,25 @@
 
 /* MEDIA QUERIES (phones) */
 @media screen and (max-width: 600px) {
+  #banner {
+    margin-top: 3.5rem;
+    height: calc(100vh - 3.5rem);
+  }
   /* .container.banner__container {
     display: grid;
     grid-template-columns: 1fr;
   } */
   .banner__img {
-    display: none;
+    margin-top: 3rem;
   }
   .banner__info .tagline {
-    font-size: 0.9rem;
-    padding: 0.5rem 0.7rem;
+    font-size: 0.8rem;
+    padding: 0.4rem 0.6rem;
   }
   .banner__info .wrap {
     font-size: 1.7rem;
   }
   .banner__desc {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 }
