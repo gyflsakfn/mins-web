@@ -11,11 +11,13 @@ const ItemNav = ({ id }) => {
     });
 
   const removeCommentHandler = () => {
-    removeProject.mutate({ id }, {
-      onSuccess: () => {
-        window.alert('삭제되었습니다.')
-      }
-    })
+    if (window.confirm('코멘트를 삭제하시겠습니까?')) {
+      removeProject.mutate({ id }, {
+        onSuccess: () => {
+          window.alert('삭제되었습니다.')
+        }
+      })
+    }
   }
   return (
     <div className='itemNav__buttono-wrapper'>

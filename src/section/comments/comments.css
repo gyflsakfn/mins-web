@@ -117,7 +117,7 @@
   position: absolute;
   color: var(--color-black);
   z-index: 99;
-  top: 50%;
+  top: 35%;
   left: 50%;
   width: 184px;
   height: 42px;

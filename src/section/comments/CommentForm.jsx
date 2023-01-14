@@ -33,6 +33,10 @@ const CommentForm = ({ user, logout }) => {
     handleResizeHeight();
   }
 
+  const handleLogout = () => {
+    if (window.confirm('로그아웃하시면 코멘트를 보실 수 없습니다. 로그아웃하시겠습니까?')) return logout()
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     addComment.mutate({ commentInfo, user }, {
@@ -42,7 +46,6 @@ const CommentForm = ({ user, logout }) => {
       }
     })
   }
-
 
   const isWriteFn = useCallback(() => {
     let result = comments?.filter((comment) => comment.id === user.uid);
@@ -58,7 +61,7 @@ const CommentForm = ({ user, logout }) => {
         isWrite ?
           <div className="commentForm__Info-wrapper">
             <p>{`${user.displayName}님 작성해주셔서 감사합니다.`}</p>
-            <Button onClick={logout} color={'red'} size='sm' text={'로그아웃'} />
+            <Button onClick={handleLogout} color={'red'} size='sm' text={'로그아웃'} />
           </div>
           :
           <form onSubmit={handleSubmit} className="commentForm">
@@ -71,7 +74,7 @@ const CommentForm = ({ user, logout }) => {
             </div>
             <textarea rows={1} ref={textRef} type="text" name="comment" value={commentInfo.comment ?? ''} placeholder="코멘트를 적으세요." onChange={handleChange} />
             <div className="submit__button-wrapper">
-              <Button type={'button'} onClick={logout} size='sm' color={'red'} text={'로그아웃'} />
+              <Button type={'button'} onClick={handleLogout} size='sm' color={'red'} text={'로그아웃'} />
               <Button text='작성하기'></Button>
             </div>
           </form>

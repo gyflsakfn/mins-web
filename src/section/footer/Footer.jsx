@@ -15,6 +15,7 @@ const Footer = () => {
 
         </ul>
         <div className="footer__socials">
+          {/* TODO: 아이콘 위치 안맞어~ */}
           {
             socials.map(social => <a key={social.id} href={social.link} target="_blank" rel="noopener noreferrer">{social.icon}</a>)
           }
