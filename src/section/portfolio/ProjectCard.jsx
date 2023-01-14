@@ -1,16 +1,11 @@
 import React from 'react'
-import { removeProjects } from '../../api/firebase'
-import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { useAuthContext } from '../../context/AuthContext';
+import useProjects from '../../hooks/useProjects';
 
 const ProjectCard = ({ project: { id, title, desc, image, demoUrl, gitUrl } }) => {
   const { user } = useAuthContext();
 
-  const queryClient = useQueryClient();
-  const removeProject = useMutation(({ id }) => removeProjects(id),
-    {
-      onSuccess: () => queryClient.invalidateQueries('projects'),
-    });
+  const { removeProject } = useProjects();
 
   const removeProjectHandler = () => {
     removeProject.mutate({ id }, {

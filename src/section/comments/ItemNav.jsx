@@ -1,18 +1,13 @@
-import React from 'react'
-import { useMutation, useQueryClient } from '@tanstack/react-query'
-import { removeComments } from '../../api/firebase';
 import Button from '../../component/ui/Button';
+import useComments from '../../hooks/useComments';
 
 const ItemNav = ({ id }) => {
-  const queryClient = useQueryClient();
-  const removeProject = useMutation(({ id }) => removeComments(id),
-    {
-      onSuccess: () => queryClient.invalidateQueries('comments'),
-    });
+
+  const { removeComment } = useComments();
 
   const removeCommentHandler = () => {
     if (window.confirm('코멘트를 삭제하시겠습니까?')) {
-      removeProject.mutate({ id }, {
+      removeComment.mutate({ id }, {
         onSuccess: () => {
           window.alert('삭제되었습니다.')
         }

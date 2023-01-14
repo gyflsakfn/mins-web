@@ -1,15 +1,15 @@
 import './portfolio.css'
 import { useAuthContext } from '../../context/AuthContext';
-import { useQuery } from "@tanstack/react-query";
 import { Link } from 'react-router-dom';
-import { getProjects } from '../../api/firebase';
 import { BsFillPencilFill } from 'react-icons/bs'
 import ProjectCard from './ProjectCard';
 import { memo } from 'react';
+import useProjects from '../../hooks/useProjects';
 
 const Portfolio = () => {
-  const { isLoading, error, data: projects } = useQuery(['projects'], getProjects)
   const { user } = useAuthContext();
+  const { projectsQuery: { isLoading, error, data: projects },
+  } = useProjects();
 
   return (
     <section id='portfolio'>

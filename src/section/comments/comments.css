@@ -88,7 +88,7 @@
 .itemNav__buttono-wrapper {
   display: flex;
   margin-top: 1.4rem;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 /* MEDIA QUERIES (phones) */

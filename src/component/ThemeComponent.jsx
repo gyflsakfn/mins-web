@@ -39,7 +39,6 @@ const ThemeComponent = () => {
     return () => clearInterval(checkYPosition);
   }, [siteYPosition, floatingNavToggleHandler]);
 
-
   return (
     <main ref={mainRef} className={`${themeState.primary} ${themeState.background}`}>
       <Navbar />

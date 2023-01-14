@@ -1,6 +1,4 @@
 import React, { memo } from 'react'
-import { useQuery } from "@tanstack/react-query";
-import { getComments } from '../../api/firebase';
 
 // Import Swiper React components & Swiper styles
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -13,8 +11,9 @@ import { Pagination } from "swiper";
 
 import CommetItem from './CommetItem';
 
-const CommentList = ({ user, login }) => {
-  const { data: comments } = useQuery(['comments'], getComments);
+const CommentList = ({ user, login, comments }) => {
+
+
   return (
     <>
       <div className={'container '} >

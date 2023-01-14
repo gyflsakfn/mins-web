@@ -1,16 +1,13 @@
 
 import React, { memo, useCallback, useRef, useState } from 'react'
-import { addNewComment } from '../../api/firebase';
 import Button from '../../component/ui/Button';
 import User from '../../component/User';
-import { useMutation, useQueryClient } from '@tanstack/react-query'
-import { useQuery } from "@tanstack/react-query";
-import { getComments } from '../../api/firebase';
+import useComments from '../../hooks/useComments';
 
-const CommentForm = ({ user, logout }) => {
+const CommentForm = ({ user, logout, comments }) => {
   const [commentInfo, setCommentInfo] = useState({});
-  const queryClient = useQueryClient();
-  const { data: comments } = useQuery(['comments'], getComments);
+
+  const { addComment } = useComments();
 
   const textRef = useRef();
 
@@ -18,12 +15,6 @@ const CommentForm = ({ user, logout }) => {
     textRef.current.style.height = 'auto';
     textRef.current.style.height = textRef.current.scrollHeight + 'px';
   }, []);
-
-
-  const addComment = useMutation(({ commentInfo, user }) => addNewComment(commentInfo, user),
-    {
-      onSuccess: () => queryClient.invalidateQueries('projects'),
-    });
 
   const handleChange = (e) => {
     const target = e.target;
