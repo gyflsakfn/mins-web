@@ -1,22 +1,21 @@
-
-import { useOutletContext } from "react-router-dom";
 import About from "../section/about/About";
 import Banner from "../section/banner/Banner";
 import Comments from '../section/comments/Comments';
-import FloatingNav from '../section/floating-nav/FloatingNav';
+import FAQs from "../section/faqs/FAQs";
+import IsFloatingNav from "../section/floating-nav/IsFloatingNav";
 import Portfolio from "../section/portfolio/Portfolio";
 import Skills from "../section/skills/Skills";
 
 const Home = () => {
-  const { showFloatingNav } = useOutletContext();
   return (
     <>
       <Banner />
       <About />
       <Skills />
       <Portfolio />
+      <FAQs />
       <Comments />
-      {showFloatingNav && <FloatingNav />}
+      <IsFloatingNav />
     </>
   )
 }

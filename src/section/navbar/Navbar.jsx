@@ -1,6 +1,6 @@
 
 import { HashLink } from 'react-router-hash-link';
-import { IoSettingsOutline } from 'react-icons/io5'
+import { IoIosColorPalette } from 'react-icons/io'
 import { links } from '../../util/data';
 import './navbar.css'
 import { useModalContext } from '../../context/ModalContext';
@@ -22,8 +22,7 @@ const Navbar = () => {
             </li>)
           }
         </ul>
-        {/* <button id='theme__icon' onClick={showModalHandler}><IoIosColorPalette /></button> */}
-        <button id='theme__icon' onClick={showModalHandler} ><IoSettingsOutline /></button>
+        <button className='theme__icon' onClick={showModalHandler} ><IoIosColorPalette /></button>
       </div>
     </nav>
   )

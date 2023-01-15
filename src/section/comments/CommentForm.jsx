@@ -1,5 +1,5 @@
 
-import React, { memo, useCallback, useRef, useState } from 'react'
+import React, { useCallback, useRef, useState } from 'react'
 import Button from '../../component/ui/Button';
 import User from '../../component/User';
 import useComments from '../../hooks/useComments';
@@ -77,4 +77,4 @@ const CommentForm = ({ user, logout, comments }) => {
   )
 }
 
-export default memo(CommentForm)
+export default CommentForm

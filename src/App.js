@@ -5,6 +5,10 @@ import { ThemeProvider } from "./context/ThemeContext";
 import ThemeComponent from "./component/ThemeComponent";
 import { Suspense } from "react";
 import Loading from "./component/ui/Loading";
+import { Outlet } from "react-router-dom";
+import Navbar from "./section/navbar/Navbar";
+import Theme from "./theme/Theme";
+import Footer from "./section/footer/Footer";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -24,6 +28,10 @@ function App() {
             <ModalProvider>
               <Suspense fallback={<Loading />}>
                 <ThemeComponent />
+                <Navbar />
+                <Outlet />
+                <Footer />
+                <Theme />
               </Suspense>
             </ModalProvider>
           </ThemeProvider>

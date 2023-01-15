@@ -33,6 +33,15 @@ nav {
   color: white;
 }
 
+.theme__icon {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
 .nav__menu a::after {
   content: "";
   position: absolute;
@@ -46,14 +55,6 @@ nav {
 }
 .nav__menu a:hover::after {
   width: 100%;
-}
-
-/* TODO: 가운데 정렬 해야함. */
-#theme__icon {
-  background: transparent;
-  color: white;
-  font-size: 2rem;
-  cursor: pointer;
 }
 
 /* HIDE NAV MENU ON TABLETS */
