@@ -8,8 +8,7 @@
 *,
 *:before,
 *:after {
-  will-change: width, margin, height, top, left, bottom, right, transform,
-    opacity;
+  will-change: transform, opacity;
 }
 * {
   margin: 0;
