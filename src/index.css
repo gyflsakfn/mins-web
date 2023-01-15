@@ -5,7 +5,12 @@
   font-weight: normal;
   font-style: normal;
 }
-
+*,
+*:before,
+*:after {
+  will-change: width, margin, height, top, left, bottom, right, transform,
+    opacity;
+}
 * {
   margin: 0;
   padding: 0;

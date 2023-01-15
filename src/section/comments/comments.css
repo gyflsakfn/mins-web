@@ -8,7 +8,7 @@
 }
 
 /* CommentItem */
-.card.comment__card:hover {
+.card:hover {
   transform: translateY(0);
 }
 .comment__card-text {

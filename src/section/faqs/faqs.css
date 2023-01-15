@@ -8,7 +8,7 @@
 .card.faq:hover {
   cursor: pointer;
   transform: none;
-  background-color: var(--color-white);
+  background-color: var(--color-light);
 }
 
 .faq > div {
