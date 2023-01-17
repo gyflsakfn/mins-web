@@ -18,7 +18,7 @@ const Footer = () => {
         <div className="footer__socials">
           {/* TODO: 아이콘 위치 안맞어~ */}
           {
-            socials.map(social => <a key={social.id} href={social.link} target="_blank" rel="noopener noreferrer">{social.icon}</a>)
+            socials.map(social => <button key={social.id} onClick={social.link ? () => window.open(`${social.link}`, "_blank") : () => window.alert('준비 중입니다.')}>{social.icon}</button>)
           }
         </div>
         <div className="footer__say">

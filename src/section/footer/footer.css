@@ -16,7 +16,7 @@ footer .nav__menu {
   margin: 3rem auto 4rem;
 }
 
-.footer__socials a {
+.footer__socials button {
   background-color: var(--color-black);
   color: var(--color-white);
   padding: 0.7rem;
@@ -26,10 +26,11 @@ footer .nav__menu {
   aspect-ratio: 1/1;
   display: grid;
   place-items: center;
+  cursor: pointer;
   border-radius: var(--border-radius-3);
 }
 
-.footer__socials a:hover {
+.footer__socials button:hover {
   opacity: 0.7;
   transform: translateY(-0.5rem);
 }
