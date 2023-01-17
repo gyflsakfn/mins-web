@@ -6,7 +6,7 @@ const CommetItem = ({ item, user }) => {
 
   return (
     // TODO: Card로 하지말기
-    <Card className={(user?.uid === id ? `my` : '') + ' white comment__card'}>
+    <Card className={(user?.uid === id ? `my` : '') + ' white comment__card cardhover'}>
       <div className="comment__card-box">
         <h5 className=''>{isAnon ? '익명' : displayName}</h5>
       </div>

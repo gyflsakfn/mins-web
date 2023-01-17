@@ -19,7 +19,7 @@ const About = () => {
           <div className="about__cards">
             {
               cardData.map(item => (
-                <Card key={item.id} className='about__card light'>
+                <Card key={item.id} className='about__card light cardhover'>
                   <span className='about__card-icon'>{item.icon}</span>
                   <h5>{item.title}</h5>
                   <small>{item.desc}</small>

@@ -66,6 +66,7 @@
 
 .banner__desc {
   margin-top: 1.4rem;
+  padding-right: 2rem;
 }
 
 @keyframes updown {
