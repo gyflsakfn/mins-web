@@ -5,7 +5,8 @@ import './faqs.css'
 const FAQs = () => {
   return (
     <section id='faqs'><h2>Frequently Asked Questions</h2>
-      <p>Here are some questions I usually get. Click to toggle the answer, and if you still have some more questions, shoot me a message from the instagram</p>
+      <p>제가 종종 받는 질문들이며 클릭하면 답변을 볼 수 있습니다.
+        추가적인 질문을 원하시면 블로그 혹은 인스타그램 메세지를 남겨주세요.</p>
       <div className="container faqs__container">
         {
           faqs.map(faq => (

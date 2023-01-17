@@ -5,7 +5,7 @@
   align-items: start;
 }
 
-.card.faq:hover {
+.card.faq {
   cursor: pointer;
   transform: none;
   background-color: var(--color-light);

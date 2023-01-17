@@ -15,7 +15,7 @@ const Comments = () => {
   return (
     <section id='comments'>
       <h2>Comments</h2>
-      <p>코멘트를 남겨주세요. 어떠한 말이든 </p>
+      <p>김정민에 대하여 코멘트를 남겨주세요.</p>
       {isLoading && <p>Loading...</p>}
       {error && <p>{error}</p>}
       {
