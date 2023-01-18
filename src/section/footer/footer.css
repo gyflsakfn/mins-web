@@ -16,6 +16,7 @@ footer .nav__menu {
   margin: 3rem auto 4rem;
 }
 
+/* TODO: 이 부분 css 통합 */
 .footer__socials button {
   background-color: var(--color-black);
   color: var(--color-white);

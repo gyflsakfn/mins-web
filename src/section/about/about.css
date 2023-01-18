@@ -60,6 +60,7 @@
   gap: 1rem;
 }
 
+/* TODO: CSS 통합 */
 .about__right .about__socials button {
   width: 2.4rem;
   /* 가로 세로 비율 */
