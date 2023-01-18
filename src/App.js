@@ -2,13 +2,13 @@ import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { AuthContextProvider } from "./context/AuthContext";
 import { ModalProvider } from "./context/ModalContext";
 import { ThemeProvider } from "./context/ThemeContext";
-import ThemeComponent from "./component/ThemeComponent";
 import { Suspense } from "react";
-import Loading from "./component/ui/Loading";
 import { Outlet } from "react-router-dom";
+import Loading from "./component/ui/Loading";
 import Navbar from "./section/navbar/Navbar";
 import Theme from "./theme/Theme";
 import Footer from "./section/footer/Footer";
+import ThemeComponent from "./pages/ThemeComponent";
 
 const queryClient = new QueryClient({
   defaultOptions: {
