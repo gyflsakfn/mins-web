@@ -9,7 +9,6 @@
   padding: 0.6rem 2.5rem;
   border: 2px solid transparent;
   border-radius: var(--border-radius-3);
-  cursor: pointer;
 }
 .button.sm {
   padding: 0.3rem 0.9rem;

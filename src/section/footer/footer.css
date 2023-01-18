@@ -16,6 +16,7 @@ footer .nav__menu {
   margin: 3rem auto 4rem;
 }
 
+/* TODO: 이 부분 css 통합 */
 .footer__socials button {
   background-color: var(--color-black);
   color: var(--color-white);
@@ -28,6 +29,7 @@ footer .nav__menu {
   place-items: center;
   cursor: pointer;
   border-radius: var(--border-radius-3);
+  transition: var(--transition);
 }
 
 .footer__socials button:hover {

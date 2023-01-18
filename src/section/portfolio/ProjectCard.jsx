@@ -1,6 +1,7 @@
 import React from 'react'
 import { useAuthContext } from '../../context/AuthContext';
 import useProjects from '../../hooks/useProjects';
+import openOrAlert from '../../util/openOrAlert';
 
 const ProjectCard = ({ project: { id, title, desc, image, demoUrl, gitUrl } }) => {
   const { user } = useAuthContext();
@@ -24,8 +25,8 @@ const ProjectCard = ({ project: { id, title, desc, image, demoUrl, gitUrl } }) =
       <h4>{title}</h4>
       <p>{desc}</p>
       <div className="portfolio__project-cta">
-        <button onClick={demoUrl ? () => window.open(`${demoUrl}`, "_blank") : () => window.alert('준비 중입니다.')} className="btn sm white" >Demo</button>
-        <button onClick={gitUrl ? () => window.open(`${gitUrl}`, "_blank") : () => window.alert('준비 중입니다.')} className="btn sm primary">Gitbub</button>
+        <button onClick={openOrAlert(demoUrl)} className="btn sm white" >Demo</button>
+        <button onClick={openOrAlert(gitUrl)} className="btn sm primary">Gitbub</button>
         {
           user?.isAdmin && <button className='btn sm primary' onClick={removeProjectHandler}>삭제</button>
         }

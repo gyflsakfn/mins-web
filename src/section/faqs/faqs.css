@@ -6,7 +6,6 @@
 }
 
 .card.faq {
-  cursor: pointer;
   transform: none;
   background-color: var(--color-light);
 }
@@ -24,7 +23,6 @@
 
 .faq__icon {
   font-size: 1.2rem;
-  cursor: pointer;
   color: var(--color-black);
   background: transparent;
 }

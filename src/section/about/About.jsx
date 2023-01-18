@@ -4,6 +4,7 @@ import Card from '../../component/Card'
 import cardData from './cardData'
 import { socials } from '../../util/data'
 import { memo } from 'react'
+import openOrAlert from '../../util/openOrAlert'
 
 const About = () => {
   return (
@@ -37,7 +38,7 @@ const About = () => {
             대한 사람 대한으로 길이 보전하세</p>
           <div className="about__socials">
             {
-              socials.map(item => <a key={item.id} href={item.link} target="_blank" rel="noopener noreferrer">{item.icon}</a>)
+              socials.map(item => <button key={item.id} onClick={openOrAlert(item.link)}>{item.icon}</button>)
             }
           </div>
         </div>

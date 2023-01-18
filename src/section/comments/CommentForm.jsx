@@ -6,11 +6,9 @@ import useComments from '../../hooks/useComments';
 
 const CommentForm = ({ user, logout, comments }) => {
   const [commentInfo, setCommentInfo] = useState({});
-
   const { addComment } = useComments();
 
   const textRef = useRef();
-
   const handleResizeHeight = useCallback(() => {
     textRef.current.style.height = 'auto';
     textRef.current.style.height = textRef.current.scrollHeight + 'px';

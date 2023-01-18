@@ -35,7 +35,6 @@
   padding: 0.6rem;
   display: flex;
   align-items: center;
-  transition: var(--transition);
 }
 
 .card.about__card:hover .about__card-icon {
@@ -61,7 +60,8 @@
   gap: 1rem;
 }
 
-.about__right .about__socials a {
+/* TODO: CSS 통합 */
+.about__right .about__socials button {
   width: 2.4rem;
   /* 가로 세로 비율 */
   aspect-ratio: 1/1;
@@ -69,10 +69,11 @@
   color: var(--color-black);
   display: grid;
   place-items: center;
+  transition: var(--transition);
   border-radius: var(--border-radius-3);
 }
 
-.about__right .about__socials a:hover {
+.about__right .about__socials button:hover {
   background: var(--color-primary);
   color: var(--color-white);
   transform: translateX(-0.5rem);
