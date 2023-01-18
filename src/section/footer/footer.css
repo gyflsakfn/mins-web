@@ -28,6 +28,7 @@ footer .nav__menu {
   place-items: center;
   cursor: pointer;
   border-radius: var(--border-radius-3);
+  transition: var(--transition);
 }
 
 .footer__socials button:hover {

@@ -2,6 +2,8 @@ import './footer.css'
 import { links, socials } from '../../util/data'
 import { HashLink } from 'react-router-hash-link'
 import React from 'react'
+import openOrAlert from '../../util/openOrAlert'
+
 
 const Footer = () => {
   return (
@@ -18,7 +20,7 @@ const Footer = () => {
         <div className="footer__socials">
           {/* TODO: 아이콘 위치 안맞어~ */}
           {
-            socials.map(social => <button key={social.id} onClick={social.link ? () => window.open(`${social.link}`, "_blank") : () => window.alert('준비 중입니다.')}>{social.icon}</button>)
+            socials.map(social => <button key={social.id} onClick={openOrAlert(social.link)}>{social.icon}</button>)
           }
         </div>
         <div className="footer__say">
