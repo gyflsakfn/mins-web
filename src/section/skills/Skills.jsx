@@ -12,7 +12,7 @@ const Skills = () => {
       <h2>My Skills</h2>
       <p>기술 변화에 발맞춰 때로는 넓고 때로는 깊이 있게 기술을 습득하고 있습니다.</p>
       <div className="container skills__container">
-        <Card className='skills'>
+        <Card className='skills cardhover'>
           <div className="skills__icon"><RiReactjsLine /></div>
           <div className="skills__details">
             <h4>Front-End</h4>
@@ -28,7 +28,7 @@ const Skills = () => {
             </div>
           </div>
         </Card>
-        <Card className='skills'>
+        <Card className='skills cardhover'>
           <div className="skills__icon"><BiData /></div>
           <div className="skills__details">
             <h4>Back-End</h4>

@@ -10,9 +10,9 @@
   padding: 3rem;
 }
 
-.card.theme__modal:hover {
+/* .card.theme__modal:hover {
   background-color: #dedede;
-}
+} */
 
 .card.theme__modal small {
   font-weight: 700;

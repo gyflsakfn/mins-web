@@ -6,7 +6,7 @@
   transition: var(--transition);
 }
 
-.card:hover {
+.card.cardhover:hover {
   background: transparent;
   border-color: var(--color-primary);
   transform: translateY(-0.5rem);

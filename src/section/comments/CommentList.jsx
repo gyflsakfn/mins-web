@@ -21,7 +21,9 @@ const CommentList = ({ user, login, comments }) => {
         <div className={!user ? 'blur' : ''}>
           <Swiper className={'mySwiper'}
             slidesPerView={2}
-            spaceBetween={30}
+            // autoHeight={true}
+            spaceBetween={20}
+            freeMode={true}
             breakpoints={{
               601: { slidesPerView: 3 },
               1025: { slidesPerView: 5 }
@@ -31,7 +33,7 @@ const CommentList = ({ user, login, comments }) => {
             }}
             modules={[Pagination, Autoplay]}
             autoplay={{
-              delay: 3000,
+              delay: 4000,
               disableOnInteraction: false,
             }}
           >

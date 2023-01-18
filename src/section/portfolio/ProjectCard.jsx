@@ -24,8 +24,8 @@ const ProjectCard = ({ project: { id, title, desc, image, demoUrl, gitUrl } }) =
       <h4>{title}</h4>
       <p>{desc}</p>
       <div className="portfolio__project-cta">
-        <a href={demoUrl} className="btn sm white" target="_blank" rel="noopener noreferrer">Demo</a>
-        <a href={gitUrl} className="btn sm primary" target="_blank" rel="noopner noreferrer">Gitbub</a>
+        <button onClick={demoUrl ? () => window.open(`${demoUrl}`, "_blank") : () => window.alert('준비 중입니다.')} className="btn sm white" >Demo</button>
+        <button onClick={gitUrl ? () => window.open(`${gitUrl}`, "_blank") : () => window.alert('준비 중입니다.')} className="btn sm primary">Gitbub</button>
         {
           user?.isAdmin && <button className='btn sm primary' onClick={removeProjectHandler}>삭제</button>
         }

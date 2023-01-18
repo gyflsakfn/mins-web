@@ -20,7 +20,11 @@ const Banner = () => {
           <span className="tagline">&lt;min.s&gt;에 오신 것을 환영합니다.</span>
           <h1>{`Hi! I'm JeongMin`}</h1>
           <BannerAniText />
-          <p className='banner__desc'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+          <div className='banner__desc'>
+            <p>“ 손으로 10초면 충분히 할 수 있는 일을 컴퓨터로 하루 종일 프로그래밍해서 자동으로 수행할 때, 나는 더할 나위 없이 큰 행복을 느낀다. ”
+              - Douglas Noel Adams</p>
+
+          </div>
           <button onClick={() => console.log('connect')}>Let’s Connect <BsFillArrowRightCircleFill size={25} /></button>
         </div>
         <div className="banner__img">
