@@ -16,7 +16,7 @@ const ItemNav = ({ id }) => {
   }
   return (
     <div className='itemNav__buttono-wrapper'>
-      <Button onClick={() => console.log('수정')} color={'green'} size='sm' text={'수정'} />
+      <Button onClick={() => window.alert('개발 중입니다.')} color={'green'} size='sm' text={'수정'} />
       <Button onClick={removeCommentHandler} color={'red'} size='sm' text={'삭제'} />
     </div>
   )
