@@ -6,6 +6,7 @@
 .comments__desc {
   margin-bottom: 1.4rem;
 }
+
 .comment__card.cardhover:hover {
   background-color: var(--color-white);
 }

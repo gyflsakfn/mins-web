@@ -1,8 +1,9 @@
 import Card from '../../component/Card'
 import ItemNav from './ItemNav';
 
-const CommetItem = ({ item, user }) => {
+const CommetItem = ({ item, user, setSwiperParams }) => {
   const { id, displayName, comment, isAnon } = item;
+
 
   return (
     // TODO: Card로 하지말기
@@ -11,7 +12,15 @@ const CommetItem = ({ item, user }) => {
         <h5 className=''>{isAnon ? '익명' : displayName}</h5>
       </div>
       <div className="comment__card-text">
-        <small>{comment}</small>
+        {comment.split("\n").map((line) => { // 줄바꿈이 있으면 끊어서 아래의 형태로 출력
+          return (
+            <small>
+              {line}
+              <br />
+            </small>
+          );
+        })}
+
       </div>
       {
         user?.uid === id || user?.isAdmin ? <ItemNav id={id} /> : null
