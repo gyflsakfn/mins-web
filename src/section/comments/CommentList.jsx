@@ -1,4 +1,4 @@
-import React, { memo, useState } from 'react'
+import React, { memo } from 'react'
 
 // Import Swiper React components & Swiper styles
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -30,18 +30,17 @@ const CommentList = ({ user, login, comments }) => {
       disableOnInteraction: false,
     }
   }
-  const [swiperParams, setSwiperParams] = useState(initialSwiperParams);
 
   return (
     <>
       <div className={'container '} >
         <div className={!user ? 'blur' : ''}>
           <Swiper className={'mySwiper'}
-            {...swiperParams}
+            {...initialSwiperParams}
           >
             {
               comments &&
-              comments?.map(comment => <SwiperSlide key={comment.id}><CommetItem setSwiperParams={setSwiperParams} item={comment} user={user} /></SwiperSlide>)
+              comments?.map(comment => <SwiperSlide key={comment.id}><CommetItem item={comment} user={user} /></SwiperSlide>)
             }
           </Swiper>
         </div>

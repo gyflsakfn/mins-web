@@ -11,8 +11,7 @@ const ProjectCard = ({ project: { id, title, desc, image, demoUrl, gitUrl } }) =
   const removeProjectHandler = () => {
     removeProject.mutate({ id }, {
       onSuccess: () => {
-        // TODO: 내용 채워야 함.
-        console.log('삭제됨.')
+        window.alert('해당 프로젝트가 삭제되었습니다.')
       }
     })
   }
