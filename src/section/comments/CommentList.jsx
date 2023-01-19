@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import React, { memo, useState } from 'react'
 
 // Import Swiper React components & Swiper styles
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -13,33 +13,35 @@ import CommetItem from './CommetItem';
 import { FcGoogle } from 'react-icons/fc'
 
 const CommentList = ({ user, login, comments }) => {
-
+  const initialSwiperParams = {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    freeMode: true,
+    breakpoints: {
+      601: { slidesPerView: 2 },
+      1025: { slidesPerView: 4 }
+    },
+    pagination: {
+      clickable: true,
+    },
+    modules: [Pagination, Autoplay],
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    }
+  }
+  const [swiperParams, setSwiperParams] = useState(initialSwiperParams);
 
   return (
     <>
       <div className={'container '} >
         <div className={!user ? 'blur' : ''}>
           <Swiper className={'mySwiper'}
-            slidesPerView={2}
-            // autoHeight={true}
-            spaceBetween={20}
-            freeMode={true}
-            breakpoints={{
-              601: { slidesPerView: 3 },
-              1025: { slidesPerView: 5 }
-            }}
-            pagination={{
-              clickable: true,
-            }}
-            modules={[Pagination, Autoplay]}
-            autoplay={{
-              delay: 4000,
-              disableOnInteraction: false,
-            }}
+            {...swiperParams}
           >
             {
               comments &&
-              comments?.map(comment => <SwiperSlide key={comment.id}><CommetItem item={comment} user={user} /></SwiperSlide>)
+              comments?.map(comment => <SwiperSlide key={comment.id}><CommetItem setSwiperParams={setSwiperParams} item={comment} user={user} /></SwiperSlide>)
             }
           </Swiper>
         </div>
