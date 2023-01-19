@@ -11,9 +11,9 @@ const CommetItem = ({ item, user }) => {
         <h5 className=''>{isAnon ? '익명' : displayName}</h5>
       </div>
       <div className="comment__card-text">
-        {comment.split("\n").map((line) => { // 줄바꿈이 있으면 끊어서 아래의 형태로 출력
+        {comment.split("\n").map((line, index) => { // 줄바꿈이 있으면 끊어서 아래의 형태로 출력
           return (
-            <small>
+            <small key={index}>
               {line}
               <br />
             </small>
