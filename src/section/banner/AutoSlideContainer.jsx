@@ -1,0 +1,38 @@
+import React, { useEffect, useState } from 'react'
+
+const slideDummyData = [
+  {
+    id: 1,
+    text: "동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세.",
+    isActive: false,
+  },
+  {
+    id: 2,
+    text: "남산 위에 저 소나무, 철갑을 두른 듯 바람서리 불변함은 우리 기상일세.",
+    isActive: false,
+  },
+  {
+    id: 3,
+    text: "가을 하늘 공활한데 높고 구름 없이 밝은 달은 우리 가슴 일편단심일세.",
+    isActive: true,
+  },
+]
+
+// TODO: Text 자동 슬라이드 컴포넌트 구현!!! 명언 등 출력 예정
+const AutoSlideContainer = () => {
+  const [visualText, setVisualText] = useState();
+  // Slide 시킬 text
+  // slide 시간
+  useEffect(() => {
+    let data = slideDummyData.map(item => item.text)
+    setInterval((i) => {
+      setVisualText(data[i])
+    }, 2000)
+  }, [])
+
+  return (
+    <div>{visualText}</div>
+  )
+}
+
+export default AutoSlideContainer
