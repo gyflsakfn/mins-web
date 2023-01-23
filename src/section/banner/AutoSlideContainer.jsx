@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 const slideDummyData = [
   {
@@ -18,20 +18,51 @@ const slideDummyData = [
   },
 ]
 
+const delay = 2500;
+
 // TODO: Text 자동 슬라이드 컴포넌트 구현!!! 명언 등 출력 예정
 const AutoSlideContainer = () => {
   const [visualText, setVisualText] = useState();
-  // Slide 시킬 text
-  // slide 시간
+
+  const [index, setIndex] = useState(0);
+  const timeoutRef = useRef(null);
+
+  function resetTimeout() {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+  }
+
   useEffect(() => {
-    let data = slideDummyData.map(item => item.text)
-    setInterval((i) => {
-      setVisualText(data[i])
-    }, 2000)
-  }, [])
+    resetTimeout();
+    timeoutRef.current = setTimeout(
+      () =>
+        setIndex((prevIndex) =>
+          prevIndex === slideDummyData.length - 1 ? 0 : prevIndex + 1
+        ),
+      delay
+    );
+
+    return () => {
+      resetTimeout();
+    };
+  }, [index]);
+
 
   return (
-    <div>{visualText}</div>
+    <div className="slideshow">
+      <div
+        className="slideshowSlider"
+        style={{ transform: `translate3d(0, ${-index * 100}%, 0)` }}
+      >
+        {slideDummyData.map((item, index) => (
+          <div
+            className="slide"
+            key={index}
+          >{item.text}</div>
+        ))}
+      </div>
+    </div>
   )
 }
 
