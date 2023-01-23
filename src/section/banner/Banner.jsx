@@ -26,7 +26,7 @@ const Banner = () => {
               - Douglas Noel Adams</p>
 
           </div>
-          {/* <AutoSlideContainer /> */}
+          <AutoSlideContainer />
           <button onClick={() => console.log('connect')}>Let’s Connect <BsFillArrowRightCircleFill size={25} /></button>
         </div>
         <div className="banner__img">
