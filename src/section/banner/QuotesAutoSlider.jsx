@@ -1,4 +1,5 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
+import './quotesautoslider.css'
 
 const quotesDummyData = [
   {
@@ -31,12 +32,13 @@ const quotesDummyData = [
 const QuotesAutoSlider = () => {
   const [currentCount, setCurrentCount] = useState(0);
   const [qutosList, setQutosList] = useState(quotesDummyData)
+  const slideRef = useRef();
 
   const tick = useCallback(() => {
     if (currentCount < qutosList.length - 1) {
       setCurrentCount(currentCount + 1)
     } else {
-      setCurrentCount(0);
+      setCurrentCount(1);
     }
   }, [currentCount, qutosList]);
 
@@ -49,9 +51,14 @@ const QuotesAutoSlider = () => {
     return () => { clearInterval(ticker) };
   }, [currentCount, qutosList, tick])
 
+  useEffect(() => {
+    slideRef.current.style.transition = "all 0.5s ease-in-out";
+    slideRef.current.style.transform = `translateY(-${currentCount * 80}px)`;
+  }, [currentCount]);
+
   return (
     <div className="quotes__container">
-      <ul>
+      <ul ref={slideRef}>
         {
           qutosList.map(qutos => (
             <li key={qutos.id}>{qutos.quote}</li>
