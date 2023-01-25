@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 
 const quotesDummyData = [
   {
@@ -21,13 +21,44 @@ const quotesDummyData = [
     quote: "손으로 10초면 충분히 할 수 있는 일을 컴퓨터로 하루 종일 프로그래밍해서 자동으로 수행할 때, 나는 더할 나위 없이 큰 행복을 느낀다.",
     author: "Douglas Noel Adams"
   },
+  {
+    id: 5,
+    quote: "손으로 10초면 충분히 할 수 있는 일을 컴퓨터로 하루 종일 프로그래밍해서 자동으로 수행할 때, 나는 더할 나위 없이 큰 행복을 느낀다.",
+    author: "Douglas Noel Adams"
+  },
 ]
 
 const QuotesAutoSlider = () => {
-  const [currentList, setCurrentList] = useState(0);
+  const [currentCount, setCurrentCount] = useState(0);
+  const [qutosList, setQutosList] = useState(quotesDummyData)
+
+  const tick = useCallback(() => {
+    if (currentCount < qutosList.length - 1) {
+      setCurrentCount(currentCount + 1)
+    } else {
+      setCurrentCount(0);
+    }
+  }, [currentCount, qutosList]);
+
+  useEffect(() => {
+    let ticker = setInterval(() => {
+      // 2초에 한번씩 tick을 반복 실행
+      tick();
+    }, 2000)
+
+    return () => { clearInterval(ticker) };
+  }, [currentCount, qutosList, tick])
 
   return (
-    <div>QuotesAutoSlider</div>
+    <div className="quotes__container">
+      <ul>
+        {
+          qutosList.map(qutos => (
+            <li key={qutos.id}>{qutos.quote}</li>
+          ))
+        }
+      </ul>
+    </div>
   )
 }
 
