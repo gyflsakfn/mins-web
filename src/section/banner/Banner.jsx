@@ -8,10 +8,9 @@ import { useThemeContext } from '../../context/ThemeContext';
 import darkBgImage from '../../assets/images/banner_bg_dark.jpg';
 import lightBgImage from '../../assets/images/banner_bg_light.png';
 import BannerAniText from './BannerAniText';
-import AutoSlideContainer from './AutoSlideContainer';
+import QuotesAutoSlider from './QuotesAutoSlider';
 
 const Banner = () => {
-
   const { themeState } = useThemeContext();
 
   return (
@@ -26,7 +25,7 @@ const Banner = () => {
               - Douglas Noel Adams</p>
 
           </div>
-          {/* <AutoSlideContainer /> */}
+          <QuotesAutoSlider />
           <button onClick={() => console.log('connect')}>Let’s Connect <BsFillArrowRightCircleFill size={25} /></button>
         </div>
         <div className="banner__img">

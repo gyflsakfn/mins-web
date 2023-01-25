@@ -1,0 +1,30 @@
+.quotes__container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem 1rem;
+  height: 7rem;
+  overflow: hidden;
+}
+
+.quotes__container ul {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.quotes__container ul li {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border: 1px solid red;
+  transform: translateY(0);
+  transition: opacity 0.2s linear;
+}
