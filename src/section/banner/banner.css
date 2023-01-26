@@ -12,6 +12,10 @@
   gap: 12%;
 }
 
+.banner__info {
+  padding: 1rem 0;
+}
+
 .banner__info .tagline {
   font-weight: 700;
   letter-spacing: 0.8px;
@@ -39,25 +43,6 @@
   color: var(--color-black);
 }
 
-.banner__info button {
-  color: var(--color-black);
-  background: transparent;
-  font-weight: 700;
-  font-size: 1.1rem;
-  margin-top: 6rem;
-  letter-spacing: 0.8px;
-  display: flex;
-  align-items: center;
-}
-.banner__info button svg {
-  font-size: 1.2rem;
-  margin-left: 10px;
-  transition: 0.3s ease-in-out;
-  line-height: 1;
-}
-.banner__info button:hover svg {
-  margin-left: 25px;
-}
 .banner__img img {
   border-radius: 50%;
   background-color: var(--color-white);

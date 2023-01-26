@@ -1,6 +1,5 @@
 import { memo } from 'react';
 import bannerAvatar from '../../assets/images/banner_img.png'
-import { BsFillArrowRightCircleFill } from 'react-icons/bs';
 // import Snowflake, { findId, makeSnowflake } from '../../component/snow';
 import './banner.css'
 import { useThemeContext } from '../../context/ThemeContext';
@@ -21,12 +20,28 @@ const Banner = () => {
           <h1>{`Hi! I'm JeongMin`}</h1>
           <BannerAniText />
           <div className='banner__desc'>
-            <p>“ 손으로 10초면 충분히 할 수 있는 일을 컴퓨터로 하루 종일 프로그래밍해서 자동으로 수행할 때, 나는 더할 나위 없이 큰 행복을 느낀다. ”
-              - Douglas Noel Adams</p>
+            <p>1. 동해물과 백두산이 마르고 닳도록
+              하느님이 보우하사 우리나라 만세
+              무궁화 삼천리 화려 강산
+              대한 사람 대한으로 길이 보전하세
+
+              2. 남산 위에 저 소나무 철갑을 두른 듯
+              바람 서리 불변함은 우리 기상일세
+              무궁화 삼천리 화려 강산
+              대한 사람 대한으로 길이 보전하세
+
+              3. 가을 하늘 공활한데 높고 구름 없이
+              밝은 달은 우리 가슴 일편단심일세
+              무궁화 삼천리 화려 강산
+              대한 사람 대한으로 길이 보전하세
+
+              4. 이 기상과 이 맘으로 충성을 다하여
+              괴로우나 즐거우나 나라 사랑하세
+              무궁화 삼천리 화려 강산
+              대한 사람 대한으로 길이 보전하세</p>
 
           </div>
           <QuotesAutoSlider />
-          <button onClick={() => console.log('connect')}>Let’s Connect <BsFillArrowRightCircleFill size={25} /></button>
         </div>
         <div className="banner__img">
           <img src={bannerAvatar} alt="" />

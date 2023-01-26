@@ -31,37 +31,43 @@ const quotesDummyData = [
 
 const QuotesAutoSlider = () => {
   const [currentCount, setCurrentCount] = useState(0);
-  const [qutosList, setQutosList] = useState(quotesDummyData)
-  const slideRef = useRef();
+  const [qutesList, setQutesList] = useState(quotesDummyData)
+  const slideUlRef = useRef();
+  const slideLiRef = useRef();
 
-  const tick = useCallback(() => {
-    if (currentCount < qutosList.length - 1) {
+  const countUpAndDown = useCallback(() => {
+    if (currentCount < qutesList.length - 1) {
       setCurrentCount(currentCount + 1)
     } else {
-      setCurrentCount(1);
+      setCurrentCount(0);
     }
-  }, [currentCount, qutosList]);
+  }, [currentCount, qutesList]);
+
 
   useEffect(() => {
-    let ticker = setInterval(() => {
+    let interval = setInterval(() => {
       // 2초에 한번씩 tick을 반복 실행
-      tick();
+      countUpAndDown();
     }, 2000)
 
-    return () => { clearInterval(ticker) };
-  }, [currentCount, qutosList, tick])
+    return () => { clearInterval(interval) };
+  }, [currentCount, qutesList, countUpAndDown])
 
   useEffect(() => {
-    slideRef.current.style.transition = "all 0.5s ease-in-out";
-    slideRef.current.style.transform = `translateY(-${currentCount * 80}px)`;
+    slideUlRef.current.style.transform = `translateY(-${slideLiRef.current.offsetHeight * currentCount}px)`;
   }, [currentCount]);
 
   return (
     <div className="quotes__container">
-      <ul ref={slideRef}>
+      <ul ref={slideUlRef}>
         {
-          qutosList.map(qutos => (
-            <li key={qutos.id}>{qutos.quote}</li>
+          qutesList.map(qutes => (
+            <li ref={slideLiRef} key={qutes.id}>
+              <div className="quotes__item-wrapper">
+                <p>{qutes.quote}</p>
+                <sapn>{qutes.author}</sapn>
+              </div>
+            </li>
           ))
         }
       </ul>
