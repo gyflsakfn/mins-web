@@ -1,6 +1,7 @@
 #banner {
   margin-top: 4rem;
   height: calc(100vh - 4rem);
+  padding-top: 2.5rem;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -10,6 +11,10 @@
   display: grid;
   grid-template-columns: 58% 30%;
   gap: 12%;
+}
+
+.banner__info {
+  padding: 1rem 0;
 }
 
 .banner__info .tagline {
@@ -39,25 +44,6 @@
   color: var(--color-black);
 }
 
-.banner__info button {
-  color: var(--color-black);
-  background: transparent;
-  font-weight: 700;
-  font-size: 1.1rem;
-  margin-top: 6rem;
-  letter-spacing: 0.8px;
-  display: flex;
-  align-items: center;
-}
-.banner__info button svg {
-  font-size: 1.2rem;
-  margin-left: 10px;
-  transition: 0.3s ease-in-out;
-  line-height: 1;
-}
-.banner__info button:hover svg {
-  margin-left: 25px;
-}
 .banner__img img {
   border-radius: 50%;
   background-color: var(--color-white);
@@ -65,7 +51,7 @@
 }
 
 .banner__desc {
-  margin-top: 1.4rem;
+  margin: 1.4rem 0 2rem;
   padding-right: 2rem;
 }
 
