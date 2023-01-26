@@ -4,7 +4,7 @@ import './quotesautoslider.css'
 const quotesDummyData = [
   {
     id: 1,
-    quote: "사람들이 꿈을 이루지 못하는 한 가지 이유는 그들이 생각을 바꾸지 않고 결과를 바꾸고 싶어하기 때문이다",
+    quote: "사람들이 꿈을 이루지 못하는 한 가지 이유는 그들이 생각을 바꾸지 않고 결과를 바꾸고 싶어하기 때문이다.",
     author: "John Maxwell"
   },
   {
@@ -14,7 +14,7 @@ const quotesDummyData = [
   },
   {
     id: 3,
-    quote: "지식은 보물이요. 실천은 보물상자를 여는 열쇠다. 보석이 아무리 가까이 있어도, 내가 팔을 뻗지 않으면 원하는 것을 얻을 수 없다.",
+    quote: "지식은 보물이요. 실천은 보물상자를 여는 열쇠다. 보석이 아무리 가까이 있어도, \n내가 팔을 뻗지 않으면 원하는 것을 얻을 수 없다.",
     author: "노자"
   },
   {
@@ -48,7 +48,7 @@ const QuotesAutoSlider = () => {
     let interval = setInterval(() => {
       // 2초에 한번씩 tick을 반복 실행
       countUpAndDown();
-    }, 2000)
+    }, 7000)
 
     return () => { clearInterval(interval) };
   }, [currentCount, qutesList, countUpAndDown])
@@ -62,11 +62,9 @@ const QuotesAutoSlider = () => {
       <ul ref={slideUlRef}>
         {
           qutesList.map(qutes => (
-            <li ref={slideLiRef} key={qutes.id}>
-              <div className="quotes__item-wrapper">
-                <p>{qutes.quote}</p>
-                <sapn>{qutes.author}</sapn>
-              </div>
+            <li className="quotes__item-wrapper" ref={slideLiRef} key={qutes.id}>
+              <p>{`" ${qutes.quote} "`}</p>
+              <span>{`- ${qutes.author} `}</span>
             </li>
           ))
         }

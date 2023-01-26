@@ -1,6 +1,7 @@
 #banner {
   margin-top: 4rem;
   height: calc(100vh - 4rem);
+  padding-top: 2.5rem;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -50,7 +51,7 @@
 }
 
 .banner__desc {
-  margin-top: 1.4rem;
+  margin: 1.4rem 0 2rem;
   padding-right: 2rem;
 }
 
