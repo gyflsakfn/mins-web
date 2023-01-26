@@ -47,7 +47,7 @@ const QuotesAutoSlider = () => {
   useEffect(() => {
     let interval = setInterval(() => {
       countUpAndDown();
-    }, 7000)
+    }, 8000)
 
     return () => { clearInterval(interval) };
   }, [currentCount, qutesList, countUpAndDown])
