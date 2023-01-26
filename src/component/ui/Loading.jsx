@@ -1,9 +1,14 @@
 import './loading.css'
+import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
 
 const Loading = () => {
   return (
-    <div className='loading'>
-      <span>조금만 기다려...</span>
+    <div className="loading">
+      <ClimbingBoxLoader
+        color="#f5ee26"
+        size={40}
+        speedMultiplier={1}
+      />
     </div>
   )
 }

@@ -26,13 +26,13 @@ function App() {
         <AuthContextProvider>
           <ThemeProvider>
             <ModalProvider>
+              <ThemeComponent />
+              <Navbar />
               <Suspense fallback={<Loading />}>
-                <ThemeComponent />
-                <Navbar />
                 <Outlet />
-                <Footer />
-                <Theme />
               </Suspense>
+              <Footer />
+              <Theme />
             </ModalProvider>
           </ThemeProvider>
         </AuthContextProvider>
