@@ -46,7 +46,6 @@ const QuotesAutoSlider = () => {
 
   useEffect(() => {
     let interval = setInterval(() => {
-      // 2초에 한번씩 tick을 반복 실행
       countUpAndDown();
     }, 7000)
 
