@@ -1,5 +1,5 @@
 import './about.css'
-import Sang from '../../assets/images/sang.jpg'
+import Sang from '../../assets/images/sang.webp'
 import Card from '../../component/Card'
 import cardData from './cardData'
 import { socials } from '../../util/data'

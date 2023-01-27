@@ -2,7 +2,6 @@ import Button from '../../component/ui/Button';
 import useComments from '../../hooks/useComments';
 
 const ItemNav = ({ id }) => {
-
   const { removeComment } = useComments();
 
   const removeCommentHandler = () => {
