@@ -38,7 +38,7 @@ const About = () => {
             대한 사람 대한으로 길이 보전하세</p>
           <div className="about__socials">
             {
-              socials.map(item => <button key={item.id} onClick={openOrAlert(item.link)}>{item.icon}</button>)
+              socials.map(item => <button key={item.id} className='socials-button' onClick={openOrAlert(item.link)}>{item.icon}</button>)
             }
           </div>
         </div>
