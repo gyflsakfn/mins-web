@@ -2,7 +2,6 @@ import React, { useCallback, useEffect, useRef, useState } from 'react'
 import './quotesautoslider.css'
 import quotesList from './data';
 
-
 const QuotesAutoSlider = () => {
   const [currentCount, setCurrentCount] = useState(0);
   const slideUlRef = useRef();
@@ -17,17 +16,19 @@ const QuotesAutoSlider = () => {
   }, [currentCount]);
 
 
+  const handleTranslate = useCallback(() => {
+    slideUlRef.current.style.transform = `translateY(-${slideLiRef.current.offsetHeight * currentCount}px)`;
+  }, [currentCount])
+
   useEffect(() => {
     let interval = setInterval(() => {
       countUpAndDown();
     }, 8000)
 
-    return () => { clearInterval(interval) };
-  }, [currentCount, countUpAndDown])
+    handleTranslate();
 
-  useEffect(() => {
-    slideUlRef.current.style.transform = `translateY(-${slideLiRef.current.offsetHeight * currentCount}px)`;
-  }, [currentCount]);
+    return () => { clearInterval(interval) };
+  }, [currentCount, countUpAndDown, handleTranslate])
 
   return (
     <div className="quotes__container">
