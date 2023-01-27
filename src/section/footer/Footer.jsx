@@ -18,9 +18,8 @@ const Footer = () => {
 
         </ul>
         <div className="footer__socials">
-          {/* TODO: 아이콘 위치 안맞어~ */}
           {
-            socials.map(social => <button key={social.id} onClick={openOrAlert(social.link)}>{social.icon}</button>)
+            socials.map(social => <button key={social.id} className='socials-button' onClick={openOrAlert(social.link)}>{social.icon}</button>)
           }
         </div>
         <div className="footer__say">

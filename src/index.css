@@ -237,6 +237,16 @@ button {
   cursor: pointer;
 }
 
+.socials-button {
+  width: 2.4rem;
+  aspect-ratio: 1/1;
+  font-size: 1rem;
+  display: grid;
+  place-items: center;
+  border-radius: var(--border-radius-3);
+  transition: var(--transition);
+}
+
 /* MEDIA QUERIES (tablets) */
 @media screen and (max-width: 1024px) {
   body {

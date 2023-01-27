@@ -1,5 +1,5 @@
 import './about.css'
-import Sang from '../../assets/images/sang.jpg'
+import Sang from '../../assets/images/sang.webp'
 import Card from '../../component/Card'
 import cardData from './cardData'
 import { socials } from '../../util/data'
@@ -38,7 +38,7 @@ const About = () => {
             대한 사람 대한으로 길이 보전하세</p>
           <div className="about__socials">
             {
-              socials.map(item => <button key={item.id} onClick={openOrAlert(item.link)}>{item.icon}</button>)
+              socials.map(item => <button key={item.id} className='socials-button' onClick={openOrAlert(item.link)}>{item.icon}</button>)
             }
           </div>
         </div>

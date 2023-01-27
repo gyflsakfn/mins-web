@@ -16,25 +16,15 @@ footer .nav__menu {
   margin: 3rem auto 4rem;
 }
 
-/* TODO: 이 부분 css 통합 */
-.footer__socials button {
+.footer__socials .socials-button {
   background-color: var(--color-black);
   color: var(--color-white);
-  padding: 0.7rem;
-  border-radius: var(--border-radius-3);
-  font-size: 1rem;
-  /* 가로 세로 비율 */
-  aspect-ratio: 1/1;
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  border-radius: var(--border-radius-3);
-  transition: var(--transition);
+  transform: scale(1.1);
 }
 
-.footer__socials button:hover {
+.footer__socials .socials-button:hover {
   opacity: 0.7;
-  transform: translateY(-0.5rem);
+  transform: translateY(-0.5rem) scale(1.1);
 }
 
 .footer__say {
