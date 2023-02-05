@@ -1,0 +1,40 @@
+* [33m 83e0ad7  [m[34m2023-02-05[m : [37mtest [1;32m-- JEONGMIN[m [1;31m (origin/main)[m
+* [33m e50ea67  [m[34m2023-02-05[m : [37m모르고 깃 내역 삭제... [1;32m-- JEONGMIN[m [1;31m (HEAD -> main)[m
+* [33m de71731  [m[34m2023-01-10[m : [37mFeat: 해당 유저가 작성한 comment 삭제 구현 [1;32m-- JEONGMIN[m [1;31m (origin/develop)[m
+* [33m 6ea515c  [m[34m2023-01-10[m : [37mFeat: 상태 변수 이름 수정 및 textarea 자동 줄바꿈 [1;32m-- JEONGMIN[m [1;31m[m
+* [33m f669998  [m[34m2023-01-09[m : [37mFeat: Comments 조건부 렌더링 일부 완료 [1;32m-- JEONGMIN[m [1;31m[m
+* [33m 5245d48  [m[34m2023-01-09[m : [37mFix: Error Fix [1;32m-- JEONGMIN[m [1;31m[m
+* [33m 8772e82  [m[34m2023-01-09[m : [37mFeat: Banner 배경 이미지 테마에 따라 변경 [1;32m-- JEONGMIN[m [1;31m[m
+* [33m da2cf71  [m[34m2023-01-09[m : [37mFeat: 테마 변경 구현 [1;32m-- JEONGMIN[m [1;31m[m
+* [33m a3dfcc0  [m[34m2023-01-09[m : [37mDesign: Theme Modal 스타일링 완료 [1;32m-- JEONGMIN[m [1;31m[m
+* [33m 4a40027  [m[34m2023-01-09[m : [37mFeat: Add ModalContext [1;32m-- JEONGMIN[m [1;31m[m
+* [33m 6e28b9b  [m[34m2023-01-08[m : [37mFeat: footer 구현 [1;32m-- JEONGMIN[m [1;31m[m
+* [33m 29f9d48  [m[34m2023-01-06[m : [37mFix: useEffect warning [1;32m-- JEONGMIN[m [1;31m[m
+* [33m 78aabc4  [m[34m2023-01-06[m : [37mFix: warning 수정 [1;32m-- JEONGMIN[m [1;31m[m
+* [33m 9acd0f3  [m[34m2023-01-06[m : [37mDesign: 비로그인시 commets blur 처리 구현 [1;32m-- JEONGMIN[m [1;31m[m
+* [33m aba4fe5  [m[34m2023-01-06[m : [37mDesign: Comments UI 간단 수정 [1;32m-- JEONGMIN[m [1;31m[m
+* [33m b696c7e  [m[34m2023-01-06[m : [37mFeat: Todo 정리 [1;32m-- JEONGMIN[m [1;31m[m
+* [33m 47cbc76  [m[34m2023-01-05[m : [37mFeat: Comments 정보 저장 [1;32m-- JEONGMIN[m [1;31m[m
+* [33m 6c52c09  [m[34m2023-01-05[m : [37mFeat: 프로젝트 삭제 [1;32m-- JEONGMIN[m [1;31m[m
+* [33m 91d0475  [m[34m2023-01-04[m : [37mFeat: projects 최신 데이터 유지 [1;32m-- JEONGMIN[m [1;31m[m
+* [33m a68bb15  [m[34m2023-01-04[m : [37mFeat: project 목록 보이기 [1;32m-- JEONGMIN[m [1;31m[m
+* [33m ad59ec9  [m[34m2023-01-04[m : [37mFeat: firebase에서 Project목록 받아오기 [1;32m-- JEONGMIN[m [1;31m[m
+* [33m 2926066  [m[34m2023-01-04[m : [37mFeat: portfolio 구현을 위한 자식 컴포넌트 구성 [1;32m-- JEONGMIN[m [1;31m[m
+* [33m f1ac5a3  [m[34m2023-01-04[m : [37mDesign: newPortfolio 컴포넌트 스타일링 일부 완료 [1;32m-- JEONGMIN[m [1;31m[m
+* [33m d3507a8  [m[34m2023-01-04[m : [37mFeat: firebase에 Portfolio 내용 업로드 [1;32m-- JEONGMIN[m [1;31m[m
+* [33m a110e6b  [m[34m2023-01-04[m : [37mFeat: cloudinary에 이미지 업로드 구현 [1;32m-- JEONGMIN[m [1;31m[m
+* [33m d1871f7  [m[34m2023-01-03[m : [37mFix: warnings 수정 완료 [1;32m-- JEONGMIN[m [1;31m[m
+* [33m c62f578  [m[34m2023-01-03[m : [37mFix: warnings 수정 완료 [1;32m-- JEONGMIN[m [1;31m[m
+* [33m eb1517c  [m[34m2023-01-01[m : [37mFeat: 입력 값 상태로 저장하기 [1;32m-- JEONGMIN[m [1;31m[m
+* [33m 28c40c5  [m[34m2023-01-01[m : [37mFeat: Route 경로 보호 [1;32m-- JEONGMIN[m [1;31m[m
+* [33m 8f21924  [m[34m2022-12-31[m : [37mRefactor: react-router 경로 변경 [1;32m-- JEONGMIN[m [1;31m[m
+* [33m becd4c4  [m[34m2022-12-31[m : [37mFeat: Realtime database 연결 및 어드민 추가 [1;32m-- JEONGMIN[m [1;31m[m
+* [33m 1c1ee78  [m[34m2022-12-31[m : [37mFeat: google login 추가 [1;32m-- JEONGMIN[m [1;31m[m
+* [33m 6876759  [m[34m2022-12-30[m : [37mDesign: Skills 스타일링 완료 [1;32m-- JEONGMIN[m [1;31m[m
+* [33m c5d9443  [m[34m2022-12-30[m : [37mFeat: Skills section 일부 완료 [1;32m-- JEONGMIN[m [1;31m[m
+* [33m 3a7f11d  [m[34m2022-12-30[m : [37mDesign: Card color 변경, section 배경 색 변경 [1;32m-- JEONGMIN[m [1;31m[m
+* [33m 3300f3e  [m[34m2022-12-29[m : [37mFeat: about 세션 일부 구현 완료 [1;32m-- JEONGMIN[m [1;31m[m
+* [33m 48900db  [m[34m2022-12-29[m : [37mFeat: 배너 일부 구현 [1;32m-- JEONGMIN[m [1;31m[m
+* [33m c65295c  [m[34m2022-12-28[m : [37mtest [1;32m-- JEONGMIN[m [1;31m[m
+* [33m f23a94b  [m[34m2022-12-28[m : [37m프로젝트 파일 구조 일부 완료 [1;32m-- JEONGMIN[m [1;31m[m
+* [33m 82fc66e  [m[34m2022-12-26[m : [37mInitialize project using Create React App [1;32m-- JEONGMIN[m [1;31m[m
