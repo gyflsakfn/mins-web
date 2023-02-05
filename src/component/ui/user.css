@@ -1,0 +1,11 @@
+.user__box {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.user__box img {
+  width: 2rem;
+  border-radius: 50%;
+  overflow: hidden;
+}

@@ -1,0 +1,151 @@
+#testimonials {
+  padding-bottom: 0;
+}
+
+/* Comments */
+.comments__desc {
+  margin-bottom: 1.4rem;
+}
+
+.comment__card.cardhover:hover {
+  background-color: var(--color-white);
+}
+
+/* CommentItem */
+.comment__card-text {
+  margin-top: 0.5rem;
+  line-height: 1.3;
+}
+.comment__card-text small {
+  word-wrap: break-word;
+}
+
+/* CommentList swiper */
+.swiper {
+  min-height: 22rem;
+  /* this paddint top is to give space for micro interaction on hover of swiper slide */
+  padding-top: 1rem;
+}
+
+.swiper-slide {
+  cursor: grab;
+}
+
+.swiper-pagination {
+  margin-bottom: 3rem;
+}
+
+.swiper-pagination-bullet {
+  background: var(--color-primary);
+}
+
+/* CommentForm */
+.commentForm {
+  display: flex;
+  justify-content: center;
+  background-color: var(--color-white);
+  margin: 0.4rem 1.4rem;
+  padding: 1.2rem 1.6rem;
+  border-radius: var(--border-radius-3);
+  gap: 2rem;
+}
+
+.commentForm .commentForm__user-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.commentForm .commentForm__user-wrapper .user__box {
+  margin-right: 1rem;
+}
+
+.commentForm .commentForm__checkbox-wrapper {
+  background-color: var(--color-light);
+  padding: 0.4rem 0.8rem;
+  display: flex;
+  border-radius: var(--border-radius-2);
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.commentForm textarea {
+  resize: none;
+  overflow: hidden;
+  font-size: 0.9rem;
+  color: var(--color-black);
+  background-color: var(--color-light);
+  border-radius: var(--border-radius-3);
+  padding: 0.4rem 1rem;
+}
+
+.commentForm .submit__button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.commentForm__Info-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 1.4rem;
+  gap: 0.8rem;
+}
+
+.itemNav__buttono-wrapper {
+  display: flex;
+  margin-top: 1.4rem;
+  gap: 0.3rem;
+  justify-content: flex-end;
+}
+
+/* MEDIA QUERIES (phones) */
+@media screen and (max-width: 1024px) {
+  .commentForm {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+}
+
+/* CommentList */
+.container {
+  position: relative;
+}
+.blur {
+  filter: blur(5px);
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-filter: blur(5px);
+}
+
+.modal__btn {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  z-index: 99;
+  top: 35%;
+  left: 50%;
+  width: 198px;
+  height: 46px;
+  font-size: 1rem;
+  background-color: #4285f4;
+  color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
+  transform: translate(-50%, -50%);
+  gap: 0.6rem;
+}
+.modal__btn svg {
+  font-size: 1.4rem;
+}
+
+.my {
+  border: 2px solid rgba(230, 67, 49, 0.949);
+}

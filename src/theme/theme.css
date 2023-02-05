@@ -1,0 +1,95 @@
+.card.theme__modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #dedede;
+  z-index: 150;
+  text-align: center;
+  box-shadow: 0 3rem 3rem rgba(0, 0, 0, 0.2);
+  padding: 3rem;
+}
+
+/* .card.theme__modal:hover {
+  background-color: #dedede;
+} */
+
+.card.theme__modal small {
+  font-weight: 700;
+  margin-top: 1rem;
+  display: block;
+  width: 98%;
+  margin-inline: auto;
+}
+
+.card.theme__modal .en {
+  margin-top: 0.2rem;
+  font-size: 0.7rem;
+  font-weight: 400;
+}
+
+.theme__primary-wrapper {
+  margin: 2.2rem 0;
+}
+
+.theme__primary-colors {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.theme__primary-colors button {
+  width: 2rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+
+.theme__primary-colors .color-1 {
+  background-color: hsl(195, 73%, 55%);
+}
+.theme__primary-colors .color-2 {
+  background-color: hsl(103, 33%, 72%);
+}
+.theme__primary-colors .color-3 {
+  background-color: hsl(45, 92%, 71%);
+}
+.theme__primary-colors .color-4 {
+  background-color: hsl(342, 100%, 78%);
+}
+.theme__primary-colors .color-5 {
+  background-color: hsl(0, 93%, 71%);
+}
+.theme__primary-colors .color-6 {
+  background-color: hsl(318, 31%, 36%);
+}
+.theme__background-colors {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.theme__background-colors button {
+  width: 7rem;
+  height: 2.5rem;
+  background-color: white;
+  border-radius: var(--border-radius-3);
+}
+
+.theme__background-colors .bg-2 {
+  background-color: #111;
+}
+
+/* MEDIA QUERIES (phones) */
+@media screen and (max-width: 600px) {
+  .card.theme__modal {
+    width: var(--container-width-md);
+    padding: 3rem 1.5rem;
+  }
+
+  .theme__primary-colors {
+    gap: 0.6rem;
+  }
+}
